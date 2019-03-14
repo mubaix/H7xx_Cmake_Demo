@@ -2,9 +2,9 @@
 #include<math.h>
 int main(void)
 {
-    int a=1;
-    int b=-2;
-    int c=-3;
+    int a,b,c;
+    printf("请输入一元二次方程的待定系数abc，以英文逗号分隔，按回车确定：");
+    scanf("%d,%d,%d",&a,&b,&c);
 
     double delta;
     double x1;
