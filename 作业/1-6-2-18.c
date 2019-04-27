@@ -11,7 +11,13 @@ void main()
                 min=j;
         if(min!=i)
         {
-        
+            temp=a[i];
+            a[i]=a[min];
+            a[min]=temp;
         }
     }
+    printf("\npai xu:\n");
+    for(i=0;i<N;i++)
+        printf("%5d",a[i]);
+    printf("\n");
 }
