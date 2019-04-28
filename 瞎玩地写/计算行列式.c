@@ -12,7 +12,7 @@ int main()
     for(z=0;z<r-1;z++)
     for(i=z;i<r-1;i++)
     {    
-	if(a[z][z]==0)
+	    if(a[z][z]==0)
         for(i=z;a[z][z]==0;i++)
         {
 		    {
