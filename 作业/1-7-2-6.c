@@ -1,18 +1,18 @@
-#include<stdio.h>
-int f(int a,int b)
+#include <stdio.h>
+int f(int a, int b)
 {
     int c;
-    if(a>b)
-        c=1;
-    else if (a==b)
-        c=0;
+    if (a > b)
+        c = 1;
+    else if (a == b)
+        c = 0;
     else
-        c=-1;
-    return(c);
+        c = -1;
+    return (c);
 }
 void main()
 {
-    int i=2,p;
-    p=f(i,i+=1);
-    printf("%d\n",p);
+    int i = 2, p;
+    p = f(i, i += 1);
+    printf("%d\n", p);
 }

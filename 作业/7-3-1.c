@@ -1,25 +1,25 @@
-#include<stdio.h>
-#include<math.h>
+#include <math.h>
+#include <stdio.h>
 int f(int n)
 {
-    int x,y,z;
-    for(x=1,y=0;x<n;x++)
+    int x, y, z;
+    for (x = 1, y = 0; x < n; x++)
     {
-        if(n%x==0)
+        if (n % x == 0)
             y++;
-        if(y>1)
+        if (y > 1)
             break;
     }
-    if(y==1)
-        z=1;
+    if (y == 1)
+        z = 1;
     else
-        z=0;
+        z = 0;
     return z;
 }
 void main()
 {
     int n;
     printf("please input a number:");
-    scanf("%d",&n);
-    printf("%d\n",f(n));
+    scanf("%d", &n);
+    printf("%d\n", f(n));
 }
