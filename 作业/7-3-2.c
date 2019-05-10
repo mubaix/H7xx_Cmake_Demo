@@ -1,7 +1,7 @@
 #include <stdio.h>
 void f(int a[][4], int n, int hang[], int lie[])
 {
-    int i, j,n;
+    int i, j;
     for (i = 0; i < n; i++)
         hang = 0;
     for (j = 0; j < 4; j++)
