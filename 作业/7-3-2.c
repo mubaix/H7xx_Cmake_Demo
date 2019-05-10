@@ -1,17 +1,17 @@
 #include <stdio.h>
-void fun(int a[][4], int n, int row[], int col[])
+void f(int a[][4], int n, int hang[], int lie[])
 {
-    int i, j;
+    int i, j,n;
     for (i = 0; i < n; i++)
-        row = 0;
+        hang = 0;
     for (j = 0; j < 4; j++)
-        col = 0;
+        lie = 0;
     for (i = 0; i < n; i++)
         for (j = 0; j < 4; j++)
         {
-            row[i] += a[i][j];
-            col[j] += a[i][j];
+            hang[i] += a[i][j];
+            lie[j] += a[i][j];
         }
-    printf("%d\n", row[i]);
-    printf("%d\n", col[j]);
+    printf("%d\n", hang[i]);
+    printf("%d\n", lie[j]);
 }
