@@ -28,7 +28,6 @@
 /* USER CODE BEGIN Includes */
 #include "delay.h"
 #include "retarget.h"
-#include "lvgl.h"
 #include "lv_port_disp.h"
 #include "lv_examples.h"
 /* USER CODE END Includes */
@@ -40,7 +39,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define LED1_ON        HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET)        // 点亮LED1
+#define LED1_OFF        HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET)        // 关闭LED1
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -62,7 +62,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+// LCD测试函数，函数定义在底部
 /* USER CODE END 0 */
 
 /**
@@ -107,9 +107,8 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	RetargetInit(&huart1);
-	LED_1_ON();
-	HAL_GPIO_WritePin(LCD_BLK_GPIO_Port, LCD_BLK_Pin, GPIO_PIN_SET);
 
+	HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_SET);
 	lv_init();
 	lv_port_disp_init();
 	lv_example_get_started_2();
@@ -119,8 +118,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		LED1_ON;
 		lv_timer_handler();
 		delay_ms(5);
+
+		LED1_OFF;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -190,7 +192,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 /* USER CODE END 4 */
 
 /**

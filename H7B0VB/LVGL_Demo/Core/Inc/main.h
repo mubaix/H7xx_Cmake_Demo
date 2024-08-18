@@ -59,16 +59,13 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED1_Pin GPIO_PIN_13
 #define LED1_GPIO_Port GPIOC
-#define LCD_CS_Pin GPIO_PIN_11
-#define LCD_CS_GPIO_Port GPIOE
-#define LCD_DCX_Pin GPIO_PIN_15
-#define LCD_DCX_GPIO_Port GPIOE
-#define LCD_BLK_Pin GPIO_PIN_15
-#define LCD_BLK_GPIO_Port GPIOD
+#define LCD_DC_Pin GPIO_PIN_15
+#define LCD_DC_GPIO_Port GPIOE
+#define LCD_Backlight_Pin GPIO_PIN_15
+#define LCD_Backlight_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
-#define LED_1_ON() 		HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,GPIO_PIN_RESET)
-#define LED_1_OFF() 	HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin, GPIO_PIN_SET)
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

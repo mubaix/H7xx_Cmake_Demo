@@ -75,14 +75,14 @@ int _read(int fd, char *ptr, int len) {
     return -1;
 }
 
-//int _fstat(int fd, struct stat *st) {
-//    if (fd >= STDIN_FILENO && fd <= STDERR_FILENO) {
-//        st->st_mode = S_IFCHR;
-//        return 0;
-//    }
-//
-//    errno = EBADF;
-//    return 0;
-//}
+int _fstat(int fd, struct stat *st) {
+    if (fd >= STDIN_FILENO && fd <= STDERR_FILENO) {
+        st->st_mode = S_IFCHR;
+        return 0;
+    }
+
+    errno = EBADF;
+    return 0;
+}
 
 #endif //#if !defined(OS_USE_SEMIHOSTING)

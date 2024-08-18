@@ -61,6 +61,7 @@ include_directories(Core/Inc
         Library/Inc
 )
 
+
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)
 
 file(GLOB_RECURSE SOURCES "Library/*.*" "Core/*.*" "Drivers/*.*")

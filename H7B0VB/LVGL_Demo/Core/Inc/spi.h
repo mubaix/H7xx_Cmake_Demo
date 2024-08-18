@@ -36,6 +36,7 @@ extern SPI_HandleTypeDef hspi4;
 
 /* USER CODE BEGIN Private defines */
 
+
 /* USER CODE END Private defines */
 
 void MX_SPI4_Init(void);

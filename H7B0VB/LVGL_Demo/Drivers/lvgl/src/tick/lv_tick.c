@@ -83,6 +83,7 @@ uint32_t lv_tick_elaps(uint32_t prev_tick)
 
 void lv_delay_ms(uint32_t ms)
 {
+	delay_ms(ms);
 //    if(state.delay_cb) {
 //        state.delay_cb(ms);
 //    }
@@ -97,7 +98,6 @@ void lv_delay_ms(uint32_t ms)
 //            }
 //        }
 //    }
-	delay_ms((uint16_t)ms);
 }
 
 void lv_tick_set_cb(lv_tick_get_cb_t cb)

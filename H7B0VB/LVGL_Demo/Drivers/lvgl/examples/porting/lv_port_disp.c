@@ -13,12 +13,11 @@
 /* Include STM32Cube files here, e.g.:
 #include "stm32f7xx_hal.h"
 */
-
+#include "delay.h"
 #include "spi.h"
 #include "main.h"
 #include "lv_port_disp.h"
 #include "./src/drivers/display/st7789/lv_st7789.h"
-#include "delay.h"
 
 /*********************
  *      DEFINES
@@ -33,7 +32,7 @@
     #define MY_DISP_VER_RES    240
 #endif
 
-#define BUS_SPI1_POLL_TIMEOUT 0x1000U
+#define BUS_SPI4_POLL_TIMEOUT 0x1000U
 
 /**********************
  *      TYPEDEFS
@@ -103,7 +102,8 @@ void lv_port_disp_init(void)
 static void lcd_color_transfer_ready_cb(SPI_HandleTypeDef * hspi)
 {
     /* CS high */
-    HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
+	SPI_NSS_POLARITY_HIGH;
+    //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
     lcd_bus_busy = 0;
     lv_display_flush_ready(lcd_disp);
 }
@@ -115,13 +115,14 @@ static int32_t lcd_io_init(void)
     HAL_SPI_RegisterCallback(&hspi4, HAL_SPI_TX_COMPLETE_CB_ID, lcd_color_transfer_ready_cb);
 
     /* reset LCD */
-//    HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_RESET);
+//    HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_RESET);
 //    delay_ms(100);
-//    HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_SET);
-//	  delay_ms(100);
+//    HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_SET);
+//    delay_ms(100);
 
-    HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_SET);
+	SPI_NSS_POLARITY_HIGH;
+    //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
 
     return HAL_OK;
 }
@@ -136,17 +137,19 @@ static void lcd_send_cmd(lv_display_t * disp, const uint8_t * cmd, size_t cmd_si
     hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
     HAL_SPI_Init(&hspi4);
     /* DCX low (command) */
-    HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
     /* CS low */
-    HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
+	SPI_NSS_POLARITY_LOW;
+	//HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
     /* send command */
-    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI1_POLL_TIMEOUT) == HAL_OK) {
+    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI4_POLL_TIMEOUT) == HAL_OK) {
         /* DCX high (data) */
-        HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
         /* for short data blocks we use polling transfer */
-        HAL_SPI_Transmit(&hspi4, (uint8_t *)param, (uint16_t)param_size, BUS_SPI1_POLL_TIMEOUT);
+        HAL_SPI_Transmit(&hspi4, (uint8_t *)param, (uint16_t)param_size, BUS_SPI4_POLL_TIMEOUT);
         /* CS high */
-        HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
+		SPI_NSS_POLARITY_HIGH;
+        //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
     }
 }
 
@@ -162,13 +165,14 @@ static void lcd_send_color(lv_display_t * disp, const uint8_t * cmd, size_t cmd_
     hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
     HAL_SPI_Init(&hspi4);
     /* DCX low (command) */
-    HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
     /* CS low */
-    HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
+	SPI_NSS_POLARITY_LOW;
+	//HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
     /* send command */
-    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI1_POLL_TIMEOUT) == HAL_OK) {
+    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI4_POLL_TIMEOUT) == HAL_OK) {
         /* DCX high (data) */
-        HAL_GPIO_WritePin(LCD_DCX_GPIO_Port, LCD_DCX_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
         /* for color data use DMA transfer */
         /* Set the SPI in 16-bit mode to match endianness */
         hspi4.Init.DataSize = SPI_DATASIZE_16BIT;
