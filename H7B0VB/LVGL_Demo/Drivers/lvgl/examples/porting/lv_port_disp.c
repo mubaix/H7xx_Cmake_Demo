@@ -1,7 +1,6 @@
 /**
- * @file lv_port_lcd_stm32_template.c
+ * @file lv_port_disp_templ.c
  *
- * Example implementation of the LVGL LCD display drivers on the STM32 platform
  */
 
 /*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
@@ -10,18 +9,15 @@
 /*********************
  *      INCLUDES
  *********************/
-/* Include STM32Cube files here, e.g.:
-#include "stm32f7xx_hal.h"
-*/
-#include "delay.h"
-#include "spi.h"
-#include "main.h"
 #include "lv_port_disp.h"
-#include "./src/drivers/display/st7789/lv_st7789.h"
+#include <stdbool.h>
+#include "spi.h"
 
 /*********************
  *      DEFINES
  *********************/
+#define MY_DISP_HOR_RES    320
+#define MY_DISP_VER_RES    240
 #ifndef MY_DISP_HOR_RES
     #warning Please define or replace the macro MY_DISP_HOR_RES with the actual screen width, default value 320 is used for now.
     #define MY_DISP_HOR_RES    320
@@ -32,7 +28,7 @@
     #define MY_DISP_VER_RES    240
 #endif
 
-#define BUS_SPI4_POLL_TIMEOUT 0x1000U
+#define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565)) /*will be 2 for RGB565 */
 
 /**********************
  *      TYPEDEFS
@@ -41,17 +37,13 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-static void lcd_color_transfer_ready_cb(SPI_HandleTypeDef * hspi);
-static int32_t lcd_io_init(void);
-static void lcd_send_cmd(lv_display_t * disp, const uint8_t * cmd, size_t cmd_size, const uint8_t * param,
-                         size_t param_size);
-static void lcd_send_color(lv_display_t * disp, const uint8_t * cmd, size_t cmd_size, uint8_t * param,
-                           size_t param_size);
+static void disp_init(void);
+
+static void disp_flush(lv_display_t * disp, const lv_area_t * area, uint8_t * px_map);
+
 /**********************
  *  STATIC VARIABLES
  **********************/
-lv_display_t * lcd_disp;
-static volatile int lcd_bus_busy = 0;
 
 /**********************
  *      MACROS
@@ -63,124 +55,90 @@ static volatile int lcd_bus_busy = 0;
 
 void lv_port_disp_init(void)
 {
-    /* Initialize LCD I/O */
-    if(lcd_io_init() != 0)
-        return;
+    /*-------------------------
+     * Initialize your display
+     * -----------------------*/
+    disp_init();
 
-    /* Create the LVGL display object and the ST7789 LCD display driver */
-    lcd_disp = lv_st7789_create(MY_DISP_HOR_RES, MY_DISP_VER_RES, LV_LCD_FLAG_NONE, lcd_send_cmd, lcd_send_color);
-    lv_st7789_set_invert(lcd_disp, true);
-    lv_display_set_rotation(lcd_disp, LV_DISPLAY_ROTATION_270);     /* set landscape orientation */
+    /*------------------------------------
+     * Create a display and set a flush_cb
+     * -----------------------------------*/
+    lv_display_t * disp = lv_display_create(MY_DISP_HOR_RES, MY_DISP_VER_RES);
+    lv_display_set_flush_cb(disp, disp_flush);
 
-    /* Example: two dynamically allocated buffers for partial rendering */
-    lv_color_t * buf1 = NULL;
-    lv_color_t * buf2 = NULL;
+    /* Example 1
+     * One buffer for partial rendering*/
+    static uint8_t buf_1_1[MY_DISP_HOR_RES * 10 * BYTE_PER_PIXEL];            /*A buffer for 10 rows*/
+    lv_display_set_buffers(disp, buf_1_1, NULL, sizeof(buf_1_1), LV_DISPLAY_RENDER_MODE_PARTIAL);
 
-    uint32_t buf_size = MY_DISP_HOR_RES * MY_DISP_VER_RES / 10 * lv_color_format_get_size(lv_display_get_color_format(
-                                                                                              lcd_disp));
+    /* Example 2
+     * Two buffers for partial rendering
+     * In flush_cb DMA or similar hardware should be used to update the display in the background.*/
+//    static uint8_t buf_2_1[MY_DISP_HOR_RES * 10 * BYTE_PER_PIXEL];
+//    static uint8_t buf_2_2[MY_DISP_HOR_RES * 10 * BYTE_PER_PIXEL];
+//    lv_display_set_buffers(disp, buf_2_1, buf_2_2, sizeof(buf_2_1), LV_DISPLAY_RENDER_MODE_PARTIAL);
+//
+//    /* Example 3
+//     * Two buffers screen sized buffer for double buffering.
+//     * Both LV_DISPLAY_RENDER_MODE_DIRECT and LV_DISPLAY_RENDER_MODE_FULL works, see their comments*/
+//    static uint8_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES * BYTE_PER_PIXEL];
+//    static uint8_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES * BYTE_PER_PIXEL];
+//    lv_display_set_buffers(disp, buf_3_1, buf_3_2, sizeof(buf_3_1), LV_DISPLAY_RENDER_MODE_DIRECT);
 
-    buf1 = lv_malloc(buf_size);
-    if(buf1 == NULL) {
-        LV_LOG_ERROR("display draw buffer malloc failed");
-        return;
-    }
-
-    buf2 = lv_malloc(buf_size);
-    if(buf2 == NULL) {
-        LV_LOG_ERROR("display buffer malloc failed");
-        lv_free(buf1);
-        return;
-    }
-    lv_display_set_buffers(lcd_disp, buf1, buf2, buf_size, LV_DISPLAY_RENDER_MODE_PARTIAL);
 }
 
 /**********************
  *   STATIC FUNCTIONS
  **********************/
 
-/* Callback is called when background transfer finished */
-static void lcd_color_transfer_ready_cb(SPI_HandleTypeDef * hspi)
+/*Initialize your display and the required peripherals.*/
+static void disp_init(void)
 {
-    /* CS high */
-	SPI_NSS_POLARITY_HIGH;
-    //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
-    lcd_bus_busy = 0;
-    lv_display_flush_ready(lcd_disp);
+    /*You code here*/
+	SPI_LCD_Init();
+	LCD_Clear();
 }
 
-/* Initialize LCD I/O bus, reset LCD */
-static int32_t lcd_io_init(void)
-{
-    /* Register SPI Tx Complete Callback */
-    HAL_SPI_RegisterCallback(&hspi4, HAL_SPI_TX_COMPLETE_CB_ID, lcd_color_transfer_ready_cb);
+volatile bool disp_flush_enabled = true;
 
-    /* reset LCD */
-//    HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_RESET);
-//    delay_ms(100);
-//    HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_SET);
-//    delay_ms(100);
-
-	SPI_NSS_POLARITY_HIGH;
-    //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
-
-    return HAL_OK;
-}
-
-/* Platform-specific implementation of the LCD send command function. In general this should use polling transfer. */
-static void lcd_send_cmd(lv_display_t * disp, const uint8_t * cmd, size_t cmd_size, const uint8_t * param,
-                         size_t param_size)
-{
-    LV_UNUSED(disp);
-    while(lcd_bus_busy);    /* wait until previous transfer is finished */
-    /* Set the SPI in 8-bit mode */
-    hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
-    HAL_SPI_Init(&hspi4);
-    /* DCX low (command) */
-    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
-    /* CS low */
-	SPI_NSS_POLARITY_LOW;
-	//HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
-    /* send command */
-    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI4_POLL_TIMEOUT) == HAL_OK) {
-        /* DCX high (data) */
-        HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
-        /* for short data blocks we use polling transfer */
-        HAL_SPI_Transmit(&hspi4, (uint8_t *)param, (uint16_t)param_size, BUS_SPI4_POLL_TIMEOUT);
-        /* CS high */
-		SPI_NSS_POLARITY_HIGH;
-        //HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_SET);
-    }
-}
-
-/* Platform-specific implementation of the LCD send color function. For better performance this should use DMA transfer.
- * In case of a DMA transfer a callback must be installed to notify LVGL about the end of the transfer.
+/* Enable updating the screen (the flushing process) when disp_flush() is called by LVGL
  */
-static void lcd_send_color(lv_display_t * disp, const uint8_t * cmd, size_t cmd_size, uint8_t * param,
-                           size_t param_size)
+void disp_enable_update(void)
 {
-    LV_UNUSED(disp);
-    while(lcd_bus_busy);    /* wait until previous transfer is finished */
-    /* Set the SPI in 8-bit mode */
-    hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
-    HAL_SPI_Init(&hspi4);
-    /* DCX low (command) */
-    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
-    /* CS low */
-	SPI_NSS_POLARITY_LOW;
-	//HAL_GPIO_WritePin(LCD_CS_GPIO_Port, LCD_CS_Pin, GPIO_PIN_RESET);
-    /* send command */
-    if(HAL_SPI_Transmit(&hspi4, (uint8_t*)cmd, cmd_size, BUS_SPI4_POLL_TIMEOUT) == HAL_OK) {
-        /* DCX high (data) */
-        HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
-        /* for color data use DMA transfer */
-        /* Set the SPI in 16-bit mode to match endianness */
-        hspi4.Init.DataSize = SPI_DATASIZE_16BIT;
-        HAL_SPI_Init(&hspi4);
-        lcd_bus_busy = 1;
-        HAL_SPI_Transmit_DMA(&hspi4, param, (uint16_t)param_size / 2);
-        /* NOTE: CS will be reset in the transfer ready callback */
+    disp_flush_enabled = true;
+}
+
+/* Disable updating the screen (the flushing process) when disp_flush() is called by LVGL
+ */
+void disp_disable_update(void)
+{
+    disp_flush_enabled = false;
+}
+
+/*Flush the content of the internal buffer the specific area on the display.
+ *`px_map` contains the rendered image as raw pixel map and it should be copied to `area` on the display.
+ *You can use DMA or any hardware acceleration to do this operation in the background but
+ *'lv_display_flush_ready()' has to be called when it's finished.*/
+static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t * px_map)
+{
+    if(disp_flush_enabled) {
+        /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
+
+        int32_t x;
+        int32_t y;
+        for(y = area->y1; y <= area->y2; y++) {
+            for(x = area->x1; x <= area->x2; x++) {
+                /*Put a pixel to the display. For example:*/
+                /*put_px(x, y, *px_map)*/
+				LCD_DrawPoint(x,y,*(uint32_t*)px_map);
+                px_map++;
+            }
+        }
     }
+
+    /*IMPORTANT!!!
+     *Inform the graphics library that you are ready with the flushing*/
+    lv_display_flush_ready(disp_drv);
 }
 
 #else /*Enable this file at the top*/

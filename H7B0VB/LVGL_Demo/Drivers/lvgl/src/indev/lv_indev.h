@@ -143,7 +143,14 @@ void lv_indev_set_driver_data(lv_indev_t * indev, void * driver_data);
  * @param indev pointer to an input device
  * @param disp pointer to an display
  */
-void lv_indev_set_display(lv_indev_t * indev, struct _lv_display_t * disp);
+void lv_indev_set_display(lv_indev_t * indev, struct lv_display_t * disp);
+
+/**
+ * Set long press time to the indev
+ * @param indev pointer to an input device
+ * @param time long press time in ms
+ */
+void lv_indev_set_long_press_time(lv_indev_t * indev, uint16_t long_press_time);
 
 /**
  * Get the type of an input device
@@ -195,11 +202,25 @@ void * lv_indev_get_user_data(const lv_indev_t * indev);
 void * lv_indev_get_driver_data(const lv_indev_t * indev);
 
 /**
+ * Get whether indev is moved while pressed
+ * @param indev pointer to an input device
+ * @return true: indev is moved while pressed; false: indev is not moved while pressed
+ */
+bool lv_indev_get_press_moved(const lv_indev_t * indev);
+
+/**
  * Reset one or all input devices
  * @param indev pointer to an input device to reset or NULL to reset all of them
  * @param obj pointer to an object which triggers the reset.
  */
 void lv_indev_reset(lv_indev_t * indev, lv_obj_t * obj);
+
+/**
+ * Touch and key related events are sent to the input device first and to the widget after that.
+ * If this functions called in an indev event, the event won't be sent to the widget.
+ * @param indev pointer to an input device
+ */
+void lv_indev_stop_processing(lv_indev_t * indev);
 
 /**
  * Reset the long press state of an input device

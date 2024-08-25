@@ -54,13 +54,21 @@ include_directories(Core/Inc
         Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
         Drivers/CMSIS/Device/ST/STM32H7xx/Include
         Drivers/CMSIS/Include
-        Drivers/lvgl/examples/porting
-        Drivers/lvgl/examples
-        Drivers/lvgl/src
         Drivers/lvgl
+        Drivers/lvgl/src
+        Drivers/lvgl/src/core
+        Drivers/lvgl/src/draw
+        Drivers/lvgl/src/font
+        Drivers/lvgl/src/misc
+        Drivers/lvgl/src/widgets
+        Drivers/lvgl/examples
+        Drivers/lvgl/examples/porting
+        Drivers/lvgl/demos/widgets
+        Drivers/lvgl/demos/widgets/assets
+        Drivers/lvgl/demos/benchmark
+        Drivers/lvgl/demos/benchmark/assets
         Library/Inc
 )
-
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)
 
