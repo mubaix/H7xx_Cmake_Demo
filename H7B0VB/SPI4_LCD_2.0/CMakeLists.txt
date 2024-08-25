@@ -49,7 +49,13 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Library/Inc Core/Inc Drivers/STM32H7xx_HAL_Driver/Inc Drivers/STM32H7xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32H7xx/Include Drivers/CMSIS/Include)
+include_directories(Core/Inc
+        Drivers/STM32H7xx_HAL_Driver/Inc
+        Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
+        Drivers/CMSIS/Device/ST/STM32H7xx/Include
+        Drivers/CMSIS/Include
+        Library/Inc
+)
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)
 

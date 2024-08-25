@@ -38,7 +38,7 @@ extern "C" {
 #define GPIO_LDC_Backlight_CLK_ENABLE       __HAL_RCC_GPIOD_CLK_ENABLE()    	// 背光 GPIO时钟
 
 #define LCD_Backlight_OFF        			HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_RESET);    // 低电平，关闭背光
-#define LCD_Backlight_ON        			HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_SET);      // 高电平，开启背光
+#define LCD_Backlight_ON        			HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_SET);      // 高电平，�?启背�?
 
 #define LCD_DC_PIN                        	GPIO_PIN_15                         // 数据指令选择  引脚
 #define LCD_DC_PORT                        	GPIOE                               // 数据指令选择  GPIO端口

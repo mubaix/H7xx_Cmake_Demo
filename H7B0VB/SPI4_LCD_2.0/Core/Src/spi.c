@@ -23,32 +23,31 @@
 /* USER CODE BEGIN 0 */
 #include "gpio.h"
 #include "usart.h"
-#include "delay.h"
-#define  LCD_SPI hspi4           // SPI局部宏，方便修改和移植
-static pFONT *LCD_AsciiFonts;		// 英文字体，ASCII字符集
-static pFONT *LCD_CHFonts;		   // 中文字体（同时也包含英文字体）
+#define  LCD_SPI hspi4           // SPI�?部宏，方便修改和移植
+static pFONT *LCD_AsciiFonts;		// 英文字体，ASCII字符�?
+static pFONT *LCD_CHFonts;		   // 中文字体（同时也包含英文字体�?
 
-// 因为这类SPI的屏幕，每次更新显示时，需要先配置坐标区域、再写显存，
-// 在显示字符时，如果是一个个点去写坐标写显存，会非常慢，
-// 因此开辟一片缓冲区，先将需要显示的数据写进缓冲区，最后再批量写入显存。
+// 因为这类SPI的屏幕，每次更新显示时，�?要先配置坐标区域、再写显存，
+// 在显示字符时，如果是�?个个点去写坐标写显存，会非常慢，
+// 因此�?辟一片缓冲区，先将需要显示的数据写进缓冲区，�?后再批量写入显存�?
 // 用户可以根据实际情况去修改此处缓冲区的大小，
-// 例如，用户需要显示32*32的汉字时，需要的大小为 32*32*2 = 2048 字节（每个像素点占2字节）
-uint16_t  LCD_Buff[1024];        // LCD缓冲区，16位宽（每个像素点占2字节）
+// 例如，用户需要显�?32*32的汉字时，需要的大小�? 32*32*2 = 2048 字节（每个像素点�?2字节�?
+uint16_t  LCD_Buff[1024];        // LCD缓冲区，16位宽（每个像素点�?2字节�?
 
-struct	//LCD相关参数结构体
+struct	//LCD相关参数结构�?
 {
 	uint32_t Color;  				//	LCD当前画笔颜色
-	uint32_t BackColor;			//	背景色
+	uint32_t BackColor;			//	背景�?
 	uint8_t  ShowNum_Mode;		// 数字显示模式
 	uint8_t  Direction;			//	显示方向
 	uint16_t Width;            // 屏幕像素长度
 	uint16_t Height;           // 屏幕像素宽度
-	uint8_t  X_Offset;         // X坐标偏移，用于设置屏幕控制器的显存写入方式
-	uint8_t  Y_Offset;         // Y坐标偏移，用于设置屏幕控制器的显存写入方式
+	uint8_t  X_Offset;         // X坐标偏移，用于设置屏幕控制器的显存写入方�?
+	uint8_t  Y_Offset;         // Y坐标偏移，用于设置屏幕控制器的显存写入方�?
 }LCD;
 
-// 该函数修改于HAL的SPI库函数，专为 LCD_Clear() 清屏函数修改，
-// 目的是为了SPI传输数据不限数据长度的写入
+// 该函数修改于HAL的SPI库函数，专为 LCD_Clear() 清屏函数修改�?
+// 目的是为了SPI传输数据不限数据长度的写�?
 HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint32_t Size);
 HAL_StatusTypeDef LCD_SPI_TransmitBuffer (SPI_HandleTypeDef *hspi, uint16_t *pData, uint32_t Size);
 /* USER CODE END 0 */
@@ -167,9 +166,9 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
 /* USER CODE BEGIN 1 */
 
 /****************************************************************************************************************************************
-*	函 数 名: LCD_WriteCommand
+*	�? �? �?: LCD_WriteCommand
 *
-*	入口参数: lcd_command - 需要写入的控制指令
+*	入口参数: lcd_command - �?要写入的控制指令
 *
 *	函数功能: 用于向屏幕控制器写入指令
 *
@@ -183,11 +182,11 @@ void  LCD_WriteCommand(uint8_t lcd_command)
 }
 
 /****************************************************************************************************************************************
-*	函 数 名: LCD_WriteData_8bit
+*	�? �? �?: LCD_WriteData_8bit
 *
-*	入口参数: lcd_data - 需要写入的数据，8位
+*	入口参数: lcd_data - �?要写入的数据�?8�?
 *
-*	函数功能: 写入8位数据
+*	函数功能: 写入8位数�?
 *
 ****************************************************************************************************************************************/
 
@@ -199,31 +198,31 @@ void  LCD_WriteData_8bit(uint8_t lcd_data)
 }
 
 /****************************************************************************************************************************************
-*	函 数 名: LCD_WriteData_16bit
+*	�? �? �?: LCD_WriteData_16bit
 *
-*	入口参数: lcd_data - 需要写入的数据，16位
+*	入口参数: lcd_data - �?要写入的数据�?16�?
 *
-*	函数功能: 写入16位数据
+*	函数功能: 写入16位数�?
 *
 ****************************************************************************************************************************************/
 
 void  LCD_WriteData_16bit(uint16_t lcd_data)
 {
-	uint8_t lcd_data_buff[2];    // 数据发送区
+	uint8_t lcd_data_buff[2];    // 数据发�?�区
 	LCD_DC_Data;      // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-	lcd_data_buff[0] = lcd_data>>8;  // 将数据拆分
+	lcd_data_buff[0] = lcd_data>>8;  // 将数据拆�?
 	lcd_data_buff[1] = lcd_data;
 
 	HAL_SPI_Transmit(&LCD_SPI, lcd_data_buff, 2, 1000) ;   // 启动SPI传输
 }
 
 /****************************************************************************************************************************************
-*	函 数 名: LCD_WriteBuff
+*	�? �? �?: LCD_WriteBuff
 *
 *	入口参数: DataBuff - 数据区，DataSize - 数据长度
 *
-*	函数功能: 批量写入数据到屏幕
+*	函数功能: 批量写入数据到屏�?
 *
 ****************************************************************************************************************************************/
 
@@ -231,19 +230,19 @@ void  LCD_WriteBuff(uint16_t *DataBuff, uint16_t DataSize)
 {
 	LCD_DC_Data;     // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-// 修改为16位数据宽度，写入数据更加效率，不需要拆分
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽度
+// 修改�?16位数据宽度，写入数据更加效率，不�?要拆�?
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 	HAL_SPI_Transmit(&LCD_SPI, (uint8_t *)DataBuff, DataSize, 1000) ; // 启动SPI传输
 
-// 改回8位数据宽度，因为指令和部分数据都是按照8位传输的
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽度
+// 改回8位数据宽度，因为指令和部分数据都是按�?8位传输的
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 }
 
 /****************************************************************************************************************************************
-*	函 数 名: SPI_LCD_Init
+*	�? �? �?: SPI_LCD_Init
 *
 *	函数功能: 初始化SPI以及屏幕控制器的各种参数
 *
@@ -251,16 +250,16 @@ void  LCD_WriteBuff(uint16_t *DataBuff, uint16_t DataSize)
 
 void SPI_LCD_Init(void)
 {
-	MX_SPI4_Init();               // 初始化SPI和控制引脚
+	MX_SPI4_Init();               // 初始化SPI和控制引�?
 
-	delay_ms(10);               	// 屏幕刚完成复位时（包括上电复位），需要等待至少5ms才能发送指令
+	HAL_Delay(10);               	// 屏幕刚完成复位时（包括上电复位），需要等待至�?5ms才能发�?�指�?
 	LCD_WriteCommand(0x36);       // 显存访问控制 指令，用于设置访问显存的方式
-	LCD_WriteData_8bit(0x00);     // 配置成 从上到下、从左到右，RGB像素格式
+	LCD_WriteData_8bit(0x00);     // 配置�? 从上到下、从左到右，RGB像素格式
 
-	LCD_WriteCommand(0x3A);			// 接口像素格式 指令，用于设置使用 12位、16位还是18位色
-	LCD_WriteData_8bit(0x05);     // 此处配置成 16位 像素格式
+	LCD_WriteCommand(0x3A);			// 接口像素格式 指令，用于设置使�? 12位�??16位还�?18位色
+	LCD_WriteData_8bit(0x05);     // 此处配置�? 16�? 像素格式
 
-// 接下来很多都是电压设置指令，直接使用厂家给设定值
+// 接下来很多都是电压设置指令，直接使用厂家给设定�??
 	LCD_WriteCommand(0xB2);
 	LCD_WriteData_8bit(0x0C);
 	LCD_WriteData_8bit(0x0C);
@@ -277,8 +276,8 @@ void SPI_LCD_Init(void)
 	LCD_WriteCommand(0xC0);
 	LCD_WriteData_8bit(0x2C);
 
-	LCD_WriteCommand(0xC2);       // VDV 和 VRH 来源设置
-	LCD_WriteData_8bit(0x01);     // VDV 和 VRH 由用户自由配置
+	LCD_WriteCommand(0xC2);       // VDV �? VRH 来源设置
+	LCD_WriteData_8bit(0x01);     // VDV �? VRH 由用户自由配�?
 
 	LCD_WriteCommand(0xC3);			// VRH电压 设置指令
 	LCD_WriteData_8bit(0x12);     // VRH电压 = 4.6+( vcom+vcom offset+vdv)
@@ -286,14 +285,14 @@ void SPI_LCD_Init(void)
 	LCD_WriteCommand(0xC4);		   // VDV电压 设置指令
 	LCD_WriteData_8bit(0x20);     // VDV电压 = 0v
 
-	LCD_WriteCommand(0xC6); 		// 正常模式的帧率控制指令
-	LCD_WriteData_8bit(0x0F);   	// 设置屏幕控制器的刷新帧率为60帧
+	LCD_WriteCommand(0xC6); 		// 正常模式的帧率控制指�?
+	LCD_WriteData_8bit(0x0F);   	// 设置屏幕控制器的刷新帧率�?60�?
 
 	LCD_WriteCommand(0xD0);			// 电源控制指令
-	LCD_WriteData_8bit(0xA4);     // 无效数据，固定写入0xA4
+	LCD_WriteData_8bit(0xA4);     // 无效数据，固定写�?0xA4
 	LCD_WriteData_8bit(0xA1);     // AVDD = 6.8V ，AVDD = -4.8V ，VDS = 2.3V
 
-	LCD_WriteCommand(0xE0);       // 正极电压伽马值设定
+	LCD_WriteCommand(0xE0);       // 正极电压伽马值设�?
 	LCD_WriteData_8bit(0xD0);
 	LCD_WriteData_8bit(0x04);
 	LCD_WriteData_8bit(0x0D);
@@ -309,7 +308,7 @@ void SPI_LCD_Init(void)
 	LCD_WriteData_8bit(0x1F);
 	LCD_WriteData_8bit(0x23);
 
-	LCD_WriteCommand(0xE1);      // 负极电压伽马值设定
+	LCD_WriteCommand(0xE1);      // 负极电压伽马值设�?
 	LCD_WriteData_8bit(0xD0);
 	LCD_WriteData_8bit(0x04);
 	LCD_WriteData_8bit(0x0C);
@@ -325,105 +324,105 @@ void SPI_LCD_Init(void)
 	LCD_WriteData_8bit(0x20);
 	LCD_WriteData_8bit(0x23);
 
-	LCD_WriteCommand(0x21);       // 打开反显，因为面板是常黑型，操作需要反过来
+	LCD_WriteCommand(0x21);       // 打开反显，因为面板是常黑型，操作�?要反过来
 
-	// 退出休眠指令，LCD控制器在刚上电、复位时，会自动进入休眠模式 ，因此操作屏幕之前，需要退出休眠
-	LCD_WriteCommand(0x11);       // 退出休眠 指令
-	delay_ms(120);               // 需要等待120ms，让电源电压和时钟电路稳定下来
+	// �?出休眠指令，LCD控制器在刚上电�?�复位时，会自动进入休眠模式 ，因此操作屏幕之前，�?要�??出休�?
+	LCD_WriteCommand(0x11);       // �?出休�? 指令
+	HAL_Delay(120);               // �?要等�?120ms，让电源电压和时钟电路稳定下�?
 
-	// 打开显示指令，LCD控制器在刚上电、复位时，会自动关闭显示
+	// 打开显示指令，LCD控制器在刚上电�?�复位时，会自动关闭显示
 	LCD_WriteCommand(0x29);       // 打开显示
 
-// 以下进行一些驱动的默认设置
+// 以下进行�?些驱动的默认设置
 	LCD_SetDirection(Direction_V);  	      //	设置显示方向
-	LCD_SetBackColor(LCD_BLACK);           // 设置背景色
-	LCD_SetColor(LCD_WHITE);               // 设置画笔色
+	LCD_SetBackColor(LCD_BLACK);           // 设置背景�?
+	LCD_SetColor(LCD_WHITE);               // 设置画笔�?
 	LCD_Clear();                           // 清屏
 
 	LCD_SetAsciiFont(&ASCII_Font24);       // 设置默认字体
 	LCD_ShowNumMode(Fill_Zero);	      	// 设置变量显示模式，多余位填充空格还是填充0
 
-// 全部设置完毕之后，打开背光
-	LCD_Backlight_ON;  // 引脚输出高电平点亮背光
+// 全部设置完毕之后，打�?背光
+	LCD_Backlight_ON;  // 引脚输出高电平点亮背�?
 
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	 LCD_SetAddress
+*	�? �? �?:	 LCD_SetAddress
 *
 *	入口参数:	 x1 - 起始水平坐标   y1 - 起始垂直坐标
 *              x2 - 终点水平坐标   y2 - 终点垂直坐标
 *
-*	函数功能:   设置需要显示的坐标区域
+*	函数功能:   设置�?要显示的坐标区域
 *****************************************************************************************************************************************/
 
 void LCD_SetAddress(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
 {
-	LCD_WriteCommand(0x2a);			//	列地址设置，即X坐标
+	LCD_WriteCommand(0x2a);			//	列地�?设置，即X坐标
 	LCD_WriteData_16bit(x1+LCD.X_Offset);
 	LCD_WriteData_16bit(x2+LCD.X_Offset);
 
-	LCD_WriteCommand(0x2b);			//	行地址设置，即Y坐标
+	LCD_WriteCommand(0x2b);			//	行地�?设置，即Y坐标
 	LCD_WriteData_16bit(y1+LCD.Y_Offset);
 	LCD_WriteData_16bit(y2+LCD.Y_Offset);
 
-	LCD_WriteCommand(0x2c);			//	开始写入显存，即要显示的颜色数据
+	LCD_WriteCommand(0x2c);			//	�?始写入显存，即要显示的颜色数�?
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_SetColor
+*	�? �? �?:	LCD_SetColor
 *
 *	入口参数:	Color - 要显示的颜色，示例：0x0000FF 表示蓝色
 *
-*	函数功能:	此函数用于设置画笔的颜色，例如显示字符、画点画线、绘图的颜色
+*	函数功能:	此函数用于设置画笔的颜色，例如显示字符�?�画点画线�?�绘图的颜色
 *
-*	说    明:	1. 为了方便用户使用自定义颜色，入口参数 Color 使用24位 RGB888的颜色格式，用户无需关心颜色格式的转换
-*					2. 24位的颜色中，从高位到低位分别对应 R、G、B  3个颜色通道
+*	�?    �?:	1. 为了方便用户使用自定义颜色，入口参数 Color 使用24�? RGB888的颜色格式，用户无需关心颜色格式的转�?
+*					2. 24位的颜色中，从高位到低位分别对应 R、G、B  3个颜色�?�道
 *
 *****************************************************************************************************************************************/
 
 void LCD_SetColor(uint32_t Color)
 {
-	uint16_t Red_Value = 0, Green_Value = 0, Blue_Value = 0; //各个颜色通道的值
+	uint16_t Red_Value = 0, Green_Value = 0, Blue_Value = 0; //各个颜色通道的�??
 
-	Red_Value   = (uint16_t)((Color&0x00F80000)>>8);   // 转换成 16位 的RGB565颜色
+	Red_Value   = (uint16_t)((Color&0x00F80000)>>8);   // 转换�? 16�? 的RGB565颜色
 	Green_Value = (uint16_t)((Color&0x0000FC00)>>5);
 	Blue_Value  = (uint16_t)((Color&0x000000F8)>>3);
 
-	LCD.Color = (uint16_t)(Red_Value | Green_Value | Blue_Value);  // 将颜色写入全局LCD参数
+	LCD.Color = (uint16_t)(Red_Value | Green_Value | Blue_Value);  // 将颜色写入全�?LCD参数
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_SetBackColor
+*	�? �? �?:	LCD_SetBackColor
 *
 *	入口参数:	Color - 要显示的颜色，示例：0x0000FF 表示蓝色
 *
-*	函数功能:	设置背景色,此函数用于清屏以及显示字符的背景色
+*	函数功能:	设置背景�?,此函数用于清屏以及显示字符的背景�?
 *
-*	说    明:	1. 为了方便用户使用自定义颜色，入口参数 Color 使用24位 RGB888的颜色格式，用户无需关心颜色格式的转换
-*					2. 24位的颜色中，从高位到低位分别对应 R、G、B  3个颜色通道
+*	�?    �?:	1. 为了方便用户使用自定义颜色，入口参数 Color 使用24�? RGB888的颜色格式，用户无需关心颜色格式的转�?
+*					2. 24位的颜色中，从高位到低位分别对应 R、G、B  3个颜色�?�道
 *
 *****************************************************************************************************************************************/
 
 void LCD_SetBackColor(uint32_t Color)
 {
-	uint16_t Red_Value = 0, Green_Value = 0, Blue_Value = 0; //各个颜色通道的值
+	uint16_t Red_Value = 0, Green_Value = 0, Blue_Value = 0; //各个颜色通道的�??
 
-	Red_Value   = (uint16_t)((Color&0x00F80000)>>8);   // 转换成 16位 的RGB565颜色
+	Red_Value   = (uint16_t)((Color&0x00F80000)>>8);   // 转换�? 16�? 的RGB565颜色
 	Green_Value = (uint16_t)((Color&0x0000FC00)>>5);
 	Blue_Value  = (uint16_t)((Color&0x000000F8)>>3);
 
-	LCD.BackColor = (uint16_t)(Red_Value | Green_Value | Blue_Value);	// 将颜色写入全局LCD参数
+	LCD.BackColor = (uint16_t)(Red_Value | Green_Value | Blue_Value);	// 将颜色写入全�?LCD参数
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_SetDirection
+*	�? �? �?:	LCD_SetDirection
 *
 *	入口参数:	direction - 要显示的方向
 *
 *	函数功能:	设置要显示的方向
 *
-*	说    明:   1. 可输入参数 Direction_H 、Direction_V 、Direction_H_Flip 、Direction_V_Flip
+*	�?    �?:   1. 可输入参�? Direction_H 、Direction_V 、Direction_H_Flip 、Direction_V_Flip
 *              2. 使用示例 LCD_DisplayDirection(Direction_H) ，即设置屏幕横屏显示
 *
 *****************************************************************************************************************************************/
@@ -438,7 +437,7 @@ void LCD_SetDirection(uint8_t direction)
 		LCD_WriteData_8bit(0x70);        // 横屏显示
 		LCD.X_Offset   = 0;             // 设置控制器坐标偏移量
 		LCD.Y_Offset   = 0;
-		LCD.Width      = LCD_Height;		// 重新赋值长、宽
+		LCD.Width      = LCD_Height;		// 重新赋�?�长、宽
 		LCD.Height     = LCD_Width;
 	}
 	else if( direction == Direction_V )
@@ -447,7 +446,7 @@ void LCD_SetDirection(uint8_t direction)
 		LCD_WriteData_8bit(0x00);        // 垂直显示
 		LCD.X_Offset   = 0;              // 设置控制器坐标偏移量
 		LCD.Y_Offset   = 0;
-		LCD.Width      = LCD_Width;		// 重新赋值长、宽
+		LCD.Width      = LCD_Width;		// 重新赋�?�长、宽
 		LCD.Height     = LCD_Height;
 	}
 	else if( direction == Direction_H_Flip )
@@ -456,7 +455,7 @@ void LCD_SetDirection(uint8_t direction)
 		LCD_WriteData_8bit(0xA0);         // 横屏显示，并上下翻转，RGB像素格式
 		LCD.X_Offset   = 0;              // 设置控制器坐标偏移量
 		LCD.Y_Offset   = 0;
-		LCD.Width      = LCD_Height;		 // 重新赋值长、宽
+		LCD.Width      = LCD_Height;		 // 重新赋�?�长、宽
 		LCD.Height     = LCD_Width;
 	}
 	else if( direction == Direction_V_Flip )
@@ -465,21 +464,21 @@ void LCD_SetDirection(uint8_t direction)
 		LCD_WriteData_8bit(0xC0);        // 垂直显示 ，并上下翻转，RGB像素格式
 		LCD.X_Offset   = 0;              // 设置控制器坐标偏移量
 		LCD.Y_Offset   = 0;
-		LCD.Width      = LCD_Width;		// 重新赋值长、宽
+		LCD.Width      = LCD_Width;		// 重新赋�?�长、宽
 		LCD.Height     = LCD_Height;
 	}
 }
 
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_SetAsciiFont
+*	�? �? �?:	LCD_SetAsciiFont
 *
 *	入口参数:	*fonts - 要设置的ASCII字体
 *
-*	函数功能:	设置ASCII字体，可选择使用 3216/2412/2010/1608/1206 五种大小的字体
+*	函数功能:	设置ASCII字体，可选择使用 3216/2412/2010/1608/1206 五种大小的字�?
 *
-*	说    明:	1. 使用示例 LCD_SetAsciiFont(&ASCII_Font24) ，即设置 2412的 ASCII字体
-*					2. 相关字模存放在 lcd_fonts.c
+*	�?    �?:	1. 使用示例 LCD_SetAsciiFont(&ASCII_Font24) ，即设置 2412�? ASCII字体
+*					2. 相关字模存放�? lcd_fonts.c
 *
 *****************************************************************************************************************************************/
 
@@ -489,11 +488,11 @@ void LCD_SetAsciiFont(pFONT *Asciifonts)
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_Clear
+*	�? �? �?:	LCD_Clear
 *
-*	函数功能:	清屏函数，将LCD清除为 LCD.BackColor 的颜色
+*	函数功能:	清屏函数，将LCD清除�? LCD.BackColor 的颜�?
 *
-*	说    明:	先用 LCD_SetBackColor() 设置要清除的背景色，再调用该函数清屏即可
+*	�?    �?:	先用 LCD_SetBackColor() 设置要清除的背景色，再调用该函数清屏即可
 *
 *****************************************************************************************************************************************/
 
@@ -503,29 +502,29 @@ void LCD_Clear(void)
 
 	LCD_DC_Data;     // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-// 修改为16位数据宽度，写入数据更加效率，不需要拆分
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽度
+// 修改�?16位数据宽度，写入数据更加效率，不�?要拆�?
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 	LCD_SPI_Transmit(&LCD_SPI, LCD.BackColor, LCD.Width * LCD.Height) ;   // 启动传输
 
-// 改回8位数据宽度，因为指令和部分数据都是按照8位传输的
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽度
+// 改回8位数据宽度，因为指令和部分数据都是按�?8位传输的
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_ClearRect
+*	�? �? �?:	LCD_ClearRect
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
 *					width  - 要清除区域的横向长度
 *					height - 要清除区域的纵向宽度
 *
-*	函数功能:	局部清屏函数，将指定位置对应的区域清除为 LCD.BackColor 的颜色
+*	函数功能:	�?部清屏函数，将指定位置对应的区域清除�? LCD.BackColor 的颜�?
 *
-*	说    明:	1. 先用 LCD_SetBackColor() 设置要清除的背景色，再调用该函数清屏即可
-*				   2. 使用示例 LCD_ClearRect( 10, 10, 100, 50) ，清除坐标(10,10)开始的长100宽50的区域
+*	�?    �?:	1. 先用 LCD_SetBackColor() 设置要清除的背景色，再调用该函数清屏即可
+*				   2. 使用示例 LCD_ClearRect( 10, 10, 100, 50) ，清除坐�?(10,10)�?始的�?100�?50的区�?
 *
 *****************************************************************************************************************************************/
 
@@ -535,28 +534,28 @@ void LCD_ClearRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
 
 	LCD_DC_Data;     // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-// 修改为16位数据宽度，写入数据更加效率，不需要拆分
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽度
+// 修改�?16位数据宽度，写入数据更加效率，不�?要拆�?
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 	LCD_SPI_Transmit(&LCD_SPI, LCD.BackColor, width*height) ;  // 启动传输
 
-// 改回8位数据宽度，因为指令和部分数据都是按照8位传输的
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽度
+// 改回8位数据宽度，因为指令和部分数据都是按�?8位传输的
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_DrawPoint
+*	�? �? �?:	LCD_DrawPoint
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
-*					color  - 要绘制的颜色，使用 24位 RGB888 的颜色格式，用户无需关心颜色格式的转换
+*					color  - 要绘制的颜色，使�? 24�? RGB888 的颜色格式，用户无需关心颜色格式的转�?
 *
-*	函数功能:	在指定坐标绘制指定颜色的点
+*	函数功能:	在指定坐标绘制指定颜色的�?
 *
-*	说    明:	使用示例 LCD_DrawPoint( 10, 10, 0x0000FF) ，在坐标(10,10)绘制蓝色的点
+*	�?    �?:	使用示例 LCD_DrawPoint( 10, 10, 0x0000FF) ，在坐标(10,10)绘制蓝色的点
 *
 *****************************************************************************************************************************************/
 
@@ -568,7 +567,7 @@ void LCD_DrawPoint(uint16_t x,uint16_t y,uint32_t color)
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayChar
+*	�? �? �?:	LCD_DisplayChar
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
@@ -576,9 +575,9 @@ void LCD_DrawPoint(uint16_t x,uint16_t y,uint32_t color)
 *
 *	函数功能:	在指定坐标显示指定的字符
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为 2412的ASCII字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景色
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置�? 2412的ASCII字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景�?
 *					4. 使用示例 LCD_DisplayChar( 10, 10, 'a') ，在坐标(10,10)显示字符 'a'
 *
 *****************************************************************************************************************************************/
@@ -586,18 +585,18 @@ void LCD_DrawPoint(uint16_t x,uint16_t y,uint32_t color)
 void LCD_DisplayChar(uint16_t x, uint16_t y,uint8_t c)
 {
 	uint16_t  index = 0, counter = 0 ,i = 0, w = 0;		// 计数变量
-	uint8_t   disChar;		//存储字符的地址
+	uint8_t   disChar;		//存储字符的地�?
 
-	c = c - 32; 	// 计算ASCII字符的偏移
+	c = c - 32; 	// 计算ASCII字符的偏�?
 
 	for(index = 0; index < LCD_AsciiFonts->Sizes; index++)
 	{
-		disChar = LCD_AsciiFonts->pTable[c*LCD_AsciiFonts->Sizes + index]; //获取字符的模值
+		disChar = LCD_AsciiFonts->pTable[c*LCD_AsciiFonts->Sizes + index]; //获取字符的模�?
 		for(counter = 0; counter < 8; counter++)
 		{
 			if(disChar & 0x01)
 			{
-				LCD_Buff[i] =  LCD.Color;			// 当前模值不为0时，使用画笔色绘点
+				LCD_Buff[i] =  LCD.Color;			// 当前模�?�不�?0时，使用画笔色绘�?
 			}
 			else
 			{
@@ -606,7 +605,7 @@ void LCD_DisplayChar(uint16_t x, uint16_t y,uint8_t c)
 			disChar >>= 1;
 			i++;
 			w++;
-			if( w == LCD_AsciiFonts->Width ) // 如果写入的数据达到了字符宽度，则退出当前循环
+			if( w == LCD_AsciiFonts->Width ) // 如果写入的数据达到了字符宽度，则�?出当前循�?
 			{								   // 进入下一字符的写入的绘制
 				w = 0;
 				break;
@@ -618,18 +617,18 @@ void LCD_DisplayChar(uint16_t x, uint16_t y,uint8_t c)
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayString
+*	�? �? �?:	LCD_DisplayString
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
-*					p - ASCII字符串的首地址
+*					p - ASCII字符串的首地�?
 *
-*	函数功能:	在指定坐标显示指定的字符串
+*	函数功能:	在指定坐标显示指定的字符�?
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为 2412的ASCII字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景色
-*					4. 使用示例 LCD_DisplayString( 10, 10, "FANKE") ，在起始坐标为(10,10)的地方显示字符串"FANKE"
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置�? 2412的ASCII字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景�?
+*					4. 使用示例 LCD_DisplayString( 10, 10, "FANKE") ，在起始坐标�?(10,10)的地方显示字符串"FANKE"
 *
 *****************************************************************************************************************************************/
 
@@ -638,23 +637,23 @@ void LCD_DisplayString( uint16_t x, uint16_t y, char *p)
 	while ((x < LCD.Width) && (*p != 0))	//判断显示坐标是否超出显示区域并且字符是否为空字符
 	{
 		LCD_DisplayChar( x,y,*p);
-		x += LCD_AsciiFonts->Width; //显示下一个字符
-		p++;	//取下一个字符地址
+		x += LCD_AsciiFonts->Width; //显示下一个字�?
+		p++;	//取下�?个字符地�?
 	}
 }
 
 /****************************************************************************************************************************************
-*	函 数 名:	LCD_SetTextFont
+*	�? �? �?:	LCD_SetTextFont
 *
 *	入口参数:	*fonts - 要设置的文本字体
 *
-*	函数功能:	设置文本字体，包括中文和ASCII字符，
+*	函数功能:	设置文本字体，包括中文和ASCII字符�?
 *
-*	说    明:	1. 可选择使用 3232/2424/2020/1616/1212 五种大小的中文字体，
-*						并且对应的设置ASCII字体为 3216/2412/2010/1608/1206
-*					2. 相关字模存放在 lcd_fonts.c
-*					3. 中文字库使用的是小字库，即用到了对应的汉字再去取模
-*					4. 使用示例 LCD_SetTextFont(&CH_Font24) ，即设置 2424的中文字体以及2412的ASCII字符字体
+*	�?    �?:	1. 可�?�择使用 3232/2424/2020/1616/1212 五种大小的中文字体，
+*						并且对应的设置ASCII字体�? 3216/2412/2010/1608/1206
+*					2. 相关字模存放�? lcd_fonts.c
+*					3. 中文字库使用的是小字库，即用到了对应的汉字再去取�?
+*					4. 使用示例 LCD_SetTextFont(&CH_Font24) ，即设置 2424的中文字体以�?2412的ASCII字符字体
 *
 *****************************************************************************************************************************************/
 
@@ -672,7 +671,7 @@ void LCD_SetTextFont(pFONT *fonts)
 	}
 }
 /******************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayChinese
+*	�? �? �?:	LCD_DisplayChinese
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
@@ -680,10 +679,10 @@ void LCD_SetTextFont(pFONT *fonts)
 *
 *	函数功能:	在指定坐标显示指定的单个中文字符
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetTextFont(&CH_Font24) 设置为 2424的中文字体以及2412的ASCII字符字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0xff000000) 设置为黑色的背景色
-*					4. 使用示例 LCD_DisplayChinese( 10, 10, "反") ，在坐标(10,10)显示中文字符"反"
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetTextFont(&CH_Font24) 设置�? 2424的中文字体以�?2412的ASCII字符字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0xff000000) 设置为黑色的背景�?
+*					4. 使用示例 LCD_DisplayChinese( 10, 10, "�?") ，在坐标(10,10)显示中文字符"�?"
 *
 *****************************************************************************************************************************************/
 
@@ -691,12 +690,12 @@ void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText)
 {
 	uint16_t  i=0,index = 0, counter = 0;	// 计数变量
 	uint16_t  addr;	// 字模地址
-	uint8_t   disChar;	//字模的值
+	uint8_t   disChar;	//字模的�??
 	uint16_t  Xaddress = 0; //水平坐标
 
 	while(1)
 	{
-		// 对比数组中的汉字编码，用以定位该汉字字模的地址
+		// 对比数组中的汉字编码，用以定位该汉字字模的地�?
 		if ( *(LCD_CHFonts->pTable + (i+1)*LCD_CHFonts->Sizes + 0)==*pText && *(LCD_CHFonts->pTable + (i+1)*LCD_CHFonts->Sizes + 1)==*(pText+1) )
 		{
 			addr=i;	// 字模地址偏移
@@ -704,18 +703,18 @@ void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText)
 		}
 		i+=2;	// 每个中文字符编码占两字节
 
-		if(i >= LCD_CHFonts->Table_Rows)	break;	// 字模列表中无相应的汉字
+		if(i >= LCD_CHFonts->Table_Rows)	break;	// 字模列表中无相应的汉�?
 	}
 	i=0;
 	for(index = 0; index <LCD_CHFonts->Sizes; index++)
 	{
-		disChar = *(LCD_CHFonts->pTable + (addr)*LCD_CHFonts->Sizes + index);	// 获取相应的字模地址
+		disChar = *(LCD_CHFonts->pTable + (addr)*LCD_CHFonts->Sizes + index);	// 获取相应的字模地�?
 
 		for(counter = 0; counter < 8; counter++)
 		{
 			if(disChar & 0x01)
 			{
-				LCD_Buff[i] =  LCD.Color;			// 当前模值不为0时，使用画笔色绘点
+				LCD_Buff[i] =  LCD.Color;			// 当前模�?�不�?0时，使用画笔色绘�?
 			}
 			else
 			{
@@ -725,7 +724,7 @@ void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText)
 			disChar >>= 1;
 			Xaddress++;  //水平坐标自加
 
-			if( Xaddress == LCD_CHFonts->Width ) 	//	如果水平坐标达到了字符宽度，则退出当前循环
+			if( Xaddress == LCD_CHFonts->Width ) 	//	如果水平坐标达到了字符宽度，则�??出当前循�?
 			{														//	进入下一行的绘制
 				Xaddress = 0;
 				break;
@@ -737,18 +736,18 @@ void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText)
 }
 
 /*****************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayText
+*	�? �? �?:	LCD_DisplayText
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
-*					pText - 字符串，可以显示中文或者ASCII字符
+*					pText - 字符串，可以显示中文或�?�ASCII字符
 *
-*	函数功能:	在指定坐标显示指定的字符串
+*	函数功能:	在指定坐标显示指定的字符�?
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetTextFont(&CH_Font24) 设置为 2424的中文字体以及2412的ASCII字符字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0xff000000) 设置为黑色的背景色
-*					4. 使用示例 LCD_DisplayChinese( 10, 10, "反客科技STM32") ，在坐标(10,10)显示字符串"反客科技STM32"
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetTextFont(&CH_Font24) 设置�? 2424的中文字体以�?2412的ASCII字符字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0xff0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0xff000000) 设置为黑色的背景�?
+*					4. 使用示例 LCD_DisplayChinese( 10, 10, "反客科技STM32") ，在坐标(10,10)显示字符�?"反客科技STM32"
 *
 **********************************************************************************************************************************fanke*******/
 
@@ -757,30 +756,30 @@ void LCD_DisplayText(uint16_t x, uint16_t y, char *pText)
 
 	while(*pText != 0)	// 判断是否为空字符
 	{
-		if(*pText<=0x7F)	// 判断是否为ASCII码
+		if(*pText<=0x7F)	// 判断是否为ASCII�?
 		{
 			LCD_DisplayChar(x,y,*pText);	// 显示ASCII
 			x+=LCD_AsciiFonts->Width;				// 水平坐标调到下一个字符处
-			pText++;								// 字符串地址+1
+			pText++;								// 字符串地�?+1
 		}
 		else					// 若字符为汉字
 		{
 			LCD_DisplayChinese(x,y,pText);	// 显示汉字
 			x+=LCD_CHFonts->Width;				// 水平坐标调到下一个字符处
-			pText+=2;								// 字符串地址+2，汉字的编码要2字节
+			pText+=2;								// 字符串地�?+2，汉字的编码�?2字节
 		}
 	}
 }
 
 /*****************************************************************************************************************************************
-*	函 数 名:	LCD_ShowNumMode
+*	�? �? �?:	LCD_ShowNumMode
 *
-*	入口参数:	mode - 设置变量的显示模式
+*	入口参数:	mode - 设置变量的显示模�?
 *
-*	函数功能:	设置变量显示时多余位补0还是补空格，可输入参数 Fill_Space 填充空格，Fill_Zero 填充零
+*	函数功能:	设置变量显示时多余位�?0还是补空格，可输入参�? Fill_Space 填充空格，Fill_Zero 填充�?
 *
-*	说    明:   1. 只有 LCD_DisplayNumber() 显示整数 和 LCD_DisplayDecimals()显示小数 这两个函数用到
-*					2. 使用示例 LCD_ShowNumMode(Fill_Zero) 设置多余位填充0，例如 123 可以显示为 000123
+*	�?    �?:   1. 只有 LCD_DisplayNumber() 显示整数 �? LCD_DisplayDecimals()显示小数 这两个函数用�?
+*					2. 使用示例 LCD_ShowNumMode(Fill_Zero) 设置多余位填�?0，例�? 123 可以显示�? 000123
 *
 *****************************************************************************************************************************************/
 
@@ -790,83 +789,83 @@ void LCD_ShowNumMode(uint8_t mode)
 }
 
 /*****************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayNumber
+*	�? �? �?:	LCD_DisplayNumber
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
-*					number - 要显示的数字,范围在 -2147483648~2147483647 之间
-*					len - 数字的位数，如果位数超过len，将按其实际长度输出，如果需要显示负数，请预留一个位的符号显示空间
+*					number - 要显示的数字,范围�? -2147483648~2147483647 之间
+*					len - 数字的位数，如果位数超过len，将按其实际长度输出，如果需要显示负数，请预留一个位的符号显示空�?
 *
 *	函数功能:	在指定坐标显示指定的整数变量
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为的ASCII字符字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景色
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为的ASCII字符字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景�?
 *					4. 使用示例 LCD_DisplayNumber( 10, 10, a, 5) ，在坐标(10,10)显示指定变量a,总共5位，多余位补0或空格，
-*						例如 a=123 时，会根据 LCD_ShowNumMode()的设置来显示  123(前面两个空格位) 或者00123
+*						例如 a=123 时，会根�? LCD_ShowNumMode()的设置来显示  123(前面两个空格�?) 或�??00123
 *
 *****************************************************************************************************************************************/
 
 void  LCD_DisplayNumber( uint16_t x, uint16_t y, int32_t number, uint8_t len)
 {
-	char   Number_Buffer[15];				// 用于存储转换后的字符串
+	char   Number_Buffer[15];				// 用于存储转换后的字符�?
 
 	if( LCD.ShowNum_Mode == Fill_Zero)	// 多余位补0
 	{
-		sprintf( Number_Buffer , "%0.*d",len, number );	// 将 number 转换成字符串，便于显示
+		sprintf( Number_Buffer , "%0.*d",len, number );	// �? number 转换成字符串，便于显�?
 	}
 	else			// 多余位补空格
 	{
-		sprintf( Number_Buffer , "%*d",len, number );	// 将 number 转换成字符串，便于显示
+		sprintf( Number_Buffer , "%*d",len, number );	// �? number 转换成字符串，便于显�?
 	}
 
-	LCD_DisplayString( x, y,(char *)Number_Buffer) ;  // 将转换得到的字符串显示出来
+	LCD_DisplayString( x, y,(char *)Number_Buffer) ;  // 将转换得到的字符串显示出�?
 
 }
 
 /***************************************************************************************************************************************
-*	函 数 名:	LCD_DisplayDecimals
+*	�? �? �?:	LCD_DisplayDecimals
 *
 *	入口参数:	x - 起始水平坐标
 *					y - 起始垂直坐标
-*					decimals - 要显示的数字, double型取值1.7 x 10^（-308）~ 1.7 x 10^（+308），但是能确保准确的有效位数为15~16位
+*					decimals - 要显示的数字, double型取�?1.7 x 10^�?-308）~ 1.7 x 10^�?+308），但是能确保准确的有效位数�?15~16�?
 *
-*       			len - 整个变量的总位数（包括小数点和负号），若实际的总位数超过了指定的总位数，将按实际的总长度位输出，
-*							示例1：小数 -123.123 ，指定 len <=8 的话，则实际照常输出 -123.123
-*							示例2：小数 -123.123 ，指定 len =10 的话，则实际输出   -123.123(负号前面会有两个空格位)
-*							示例3：小数 -123.123 ，指定 len =10 的话，当调用函数 LCD_ShowNumMode() 设置为填充0模式时，实际输出 -00123.123
+*       			len - 整个变量的�?�位数（包括小数点和负号），若实际的总位数超过了指定的�?�位数，将按实际的�?�长度位输出�?
+*							示例1：小�? -123.123 ，指�? len <=8 的话，则实际照常输出 -123.123
+*							示例2：小�? -123.123 ，指�? len =10 的话，则实际输出   -123.123(负号前面会有两个空格�?)
+*							示例3：小�? -123.123 ，指�? len =10 的话，当调用函数 LCD_ShowNumMode() 设置为填�?0模式时，实际输出 -00123.123
 *
 *					decs - 要保留的小数位数，若小数的实际位数超过了指定的小数位，则按指定的宽度四舍五入输出
-*							 示例：1.12345 ，指定 decs 为4位的话，则输出结果为1.1235
+*							 示例�?1.12345 ，指�? decs �?4位的话，则输出结果为1.1235
 *
-*	函数功能:	在指定坐标显示指定的变量，包括小数
+*	函数功能:	在指定坐标显示指定的变量，包括小�?
 *
-*	说    明:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为的ASCII字符字体
-*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝色
-*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景色
-*					4. 使用示例 LCD_DisplayDecimals( 10, 10, a, 5, 3) ，在坐标(10,10)显示字变量a,总长度为5位，其中保留3位小数
+*	�?    �?:	1. 可设置要显示的字体，例如使用 LCD_SetAsciiFont(&ASCII_Font24) 设置为的ASCII字符字体
+*					2.	可设置要显示的颜色，例如使用 LCD_SetColor(0x0000FF) 设置为蓝�?
+*					3. 可设置对应的背景色，例如使用 LCD_SetBackColor(0x000000) 设置为黑色的背景�?
+*					4. 使用示例 LCD_DisplayDecimals( 10, 10, a, 5, 3) ，在坐标(10,10)显示字变量a,总长度为5位，其中保留3位小�?
 *
 *****************************************************************************************************************************************/
 
 void  LCD_DisplayDecimals( uint16_t x, uint16_t y, double decimals, uint8_t len, uint8_t decs)
 {
-	char  Number_Buffer[20];				// 用于存储转换后的字符串
+	char  Number_Buffer[20];				// 用于存储转换后的字符�?
 
-	if( LCD.ShowNum_Mode == Fill_Zero)	// 多余位填充0模式
+	if( LCD.ShowNum_Mode == Fill_Zero)	// 多余位填�?0模式
 	{
-		sprintf( Number_Buffer , "%0*.*lf",len,decs, decimals );	// 将 number 转换成字符串，便于显示
+		sprintf( Number_Buffer , "%0*.*lf",len,decs, decimals );	// �? number 转换成字符串，便于显�?
 	}
-	else		// 多余位填充空格
+	else		// 多余位填充空�?
 	{
-		sprintf( Number_Buffer , "%*.*lf",len,decs, decimals );	// 将 number 转换成字符串，便于显示
+		sprintf( Number_Buffer , "%*.*lf",len,decs, decimals );	// �? number 转换成字符串，便于显�?
 	}
 
-	LCD_DisplayString( x, y,(char *)Number_Buffer) ;	// 将转换得到的字符串显示出来
+	LCD_DisplayString( x, y,(char *)Number_Buffer) ;	// 将转换得到的字符串显示出�?
 }
 
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawLine
+*	�? �? �?: LCD_DrawLine
 *
 *	入口参数: x1 - 起点 水平坐标
 *			 	 y1 - 起点 垂直坐标
@@ -874,9 +873,9 @@ void  LCD_DisplayDecimals( uint16_t x, uint16_t y, double decimals, uint8_t len,
 *				 x2 - 终点 水平坐标
 *            y2 - 终点 垂直坐标
 *
-*	函数功能: 在两点之间画线
+*	函数功能: 在两点之间画�?
 *
-*	说    明: 该函数移植于ST官方评估板的例程
+*	�?    �?: 该函数移植于ST官方评估板的例程
 *
 *****************************************************************************************************************************************/
 
@@ -949,18 +948,18 @@ void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 }
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawLine_V
+*	�? �? �?: LCD_DrawLine_V
 *
 *	入口参数: x - 水平坐标
 *			 	 y - 垂直坐标
 *				 height - 垂直宽度
 *
-*	函数功能: 在指点位置绘制指定长宽的 垂直 线
+*	函数功能: 在指点位置绘制指定长宽的 垂直 �?
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
-*            3. 如果只是画垂直的线，优先使用此函数，速度比 LCD_DrawLine 快很多
-*  性能测试：
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
+*            3. 如果只是画垂直的线，优先使用此函数，速度�? LCD_DrawLine 快很�?
+*  性能测试�?
 *****************************************************************************************************************************************/
 
 void LCD_DrawLine_V(uint16_t x, uint16_t y, uint16_t height)
@@ -969,7 +968,7 @@ void LCD_DrawLine_V(uint16_t x, uint16_t y, uint16_t height)
 
 	for (i = 0; i < height; i++)
 	{
-		LCD_Buff[i] =  LCD.Color;  // 写入缓冲区
+		LCD_Buff[i] =  LCD.Color;  // 写入缓冲�?
 	}
 	LCD_SetAddress( x, y, x, y+height-1);	     // 设置坐标
 
@@ -977,18 +976,18 @@ void LCD_DrawLine_V(uint16_t x, uint16_t y, uint16_t height)
 }
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawLine_H
+*	�? �? �?: LCD_DrawLine_H
 *
 *	入口参数: x - 水平坐标
 *			 	 y - 垂直坐标
 *				 width  - 水平宽度
 *
-*	函数功能: 在指点位置绘制指定长宽的 水平 线
+*	函数功能: 在指点位置绘制指定长宽的 水平 �?
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
-*            3. 如果只是画 水平 的线，优先使用此函数，速度比 LCD_DrawLine 快很多
-*  性能测试：
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
+*            3. 如果只是�? 水平 的线，优先使用此函数，�?�度�? LCD_DrawLine 快很�?
+*  性能测试�?
 **********************************************************************************************************************************fanke*******/
 
 void LCD_DrawLine_H(uint16_t x, uint16_t y, uint16_t width)
@@ -997,14 +996,14 @@ void LCD_DrawLine_H(uint16_t x, uint16_t y, uint16_t width)
 
 	for (i = 0; i < width; i++)
 	{
-		LCD_Buff[i] =  LCD.Color;  // 写入缓冲区
+		LCD_Buff[i] =  LCD.Color;  // 写入缓冲�?
 	}
 	LCD_SetAddress( x, y, x+width-1, y);	     // 设置坐标
 
 	LCD_WriteBuff(LCD_Buff,width);          // 写入显存
 }
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawRect
+*	�? �? �?: LCD_DrawRect
 *
 *	入口参数: x - 水平坐标
 *			 	 y - 垂直坐标
@@ -1013,34 +1012,34 @@ void LCD_DrawLine_H(uint16_t x, uint16_t y, uint16_t width)
 *
 *	函数功能: 在指点位置绘制指定长宽的矩形线条
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
 *
 *****************************************************************************************************************************************/
 
 void LCD_DrawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
 {
-	// 绘制水平线
+	// 绘制水平�?
 	LCD_DrawLine_H( x,  y,  width);
 	LCD_DrawLine_H( x,  y+height-1,  width);
 
-	// 绘制垂直线
+	// 绘制垂直�?
 	LCD_DrawLine_V( x,  y,  height);
 	LCD_DrawLine_V( x+width-1,  y,  height);
 }
 
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawCircle
+*	�? �? �?: LCD_DrawCircle
 *
 *	入口参数: x - 圆心 水平坐标
 *			 	 y - 圆心 垂直坐标
 *			 	 r  - 半径
 *
-*	函数功能: 在坐标 (x,y) 绘制半径为 r 的圆形线条
+*	函数功能: 在坐�? (x,y) 绘制半径�? r 的圆形线�?
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
 *
 *****************************************************************************************************************************************/
 
@@ -1066,17 +1065,17 @@ void LCD_DrawCircle(uint16_t x, uint16_t y, uint16_t r)
 
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawEllipse
+*	�? �? �?: LCD_DrawEllipse
 *
 *	入口参数: x - 圆心 水平坐标
 *			 	 y - 圆心 垂直坐标
-*			 	 r1  - 水平半轴的长度
-*				 r2  - 垂直半轴的长度
+*			 	 r1  - 水平半轴的长�?
+*				 r2  - 垂直半轴的长�?
 *
-*	函数功能: 在坐标 (x,y) 绘制水平半轴为 r1 垂直半轴为 r2 的椭圆线条
+*	函数功能: 在坐�? (x,y) 绘制水平半轴�? r1 垂直半轴�? r2 的椭圆线�?
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
 *
 *****************************************************************************************************************************************/
 
@@ -1131,16 +1130,16 @@ void LCD_DrawEllipse(int x, int y, int r1, int r2)
 }
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_FillCircle
+*	�? �? �?: LCD_FillCircle
 *
 *	入口参数: x - 圆心 水平坐标
 *			 	 y - 圆心 垂直坐标
 *			 	 r  - 半径
 *
-*	函数功能: 在坐标 (x,y) 填充半径为 r 的圆形区域
+*	函数功能: 在坐�? (x,y) 填充半径�? r 的圆形区�?
 *
-*	说    明: 1. 该函数移植于ST官方评估板的例程
-*				 2. 要绘制的区域不能超过屏幕的显示区域
+*	�?    �?: 1. 该函数移植于ST官方评估板的例程
+*				 2. 要绘制的区域不能超过屏幕的显示区�?
 *
 *****************************************************************************************************************************************/
 
@@ -1186,16 +1185,16 @@ void LCD_FillCircle(uint16_t x, uint16_t y, uint16_t r)
 }
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_FillRect
+*	�? �? �?: LCD_FillRect
 *
 *	入口参数: x - 水平坐标
 *			 	 y - 垂直坐标
 *			 	 width  - 水平宽度
 *				 height -垂直宽度
 *
-*	函数功能: 在坐标 (x,y) 填充指定长宽的实心矩形
+*	函数功能: 在坐�? (x,y) 填充指定长宽的实心矩�?
 *
-*	说    明: 要绘制的区域不能超过屏幕的显示区域
+*	�?    �?: 要绘制的区域不能超过屏幕的显示区�?
 *
 *****************************************************************************************************************************************/
 
@@ -1205,45 +1204,45 @@ void LCD_FillRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
 
 	LCD_DC_Data;     // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-// 修改为16位数据宽度，写入数据更加效率，不需要拆分
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽度
+// 修改�?16位数据宽度，写入数据更加效率，不�?要拆�?
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 	LCD_SPI_Transmit(&LCD_SPI, LCD.Color, width*height) ;
 
-// 改回8位数据宽度，因为指令和部分数据都是按照8位传输的
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽度
+// 改回8位数据宽度，因为指令和部分数据都是按�?8位传输的
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 }
 
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_DrawImage
+*	�? �? �?: LCD_DrawImage
 *
 *	入口参数: x - 起始水平坐标
 *				 y - 起始垂直坐标
-*			 	 width  - 图片的水平宽度
-*				 height - 图片的垂直宽度
-*				*pImage - 图片数据存储区的首地址
+*			 	 width  - 图片的水平宽�?
+*				 height - 图片的垂直宽�?
+*				*pImage - 图片数据存储区的首地�?
 *
 *	函数功能: 在指定坐标处显示图片
 *
-*	说    明: 1.要显示的图片需要事先进行取模、获悉图片的长度和宽度
-*            2.使用 LCD_SetColor() 函数设置画笔色，LCD_SetBackColor() 设置背景色
+*	�?    �?: 1.要显示的图片�?要事先进行取模�?�获悉图片的长度和宽�?
+*            2.使用 LCD_SetColor() 函数设置画笔色，LCD_SetBackColor() 设置背景�?
 *
 *****************************************************************************************************************************************/
 
 void 	LCD_DrawImage(uint16_t x,uint16_t y,uint16_t width,uint16_t height,const uint8_t *pImage)
 {
-	uint8_t   disChar;	         // 字模的值
+	uint8_t   disChar;	         // 字模的�??
 	uint16_t  Xaddress = x;       // 水平坐标
 	uint16_t  Yaddress = y;       // 垂直坐标
 	uint16_t  i=0,j=0,m=0;        // 计数变量
-	uint16_t  BuffCount = 0;      // 缓冲区计数
+	uint16_t  BuffCount = 0;      // 缓冲区计�?
 	uint16_t  Buff_Height = 0;    // 缓冲区的行数
 
-// 因为缓冲区大小有限，需要分多次写入
-	Buff_Height = (sizeof(LCD_Buff)/2) / height;    // 计算缓冲区能够写入图片的多少行
+// 因为缓冲区大小有限，�?要分多次写入
+	Buff_Height = (sizeof(LCD_Buff)/2) / height;    // 计算缓冲区能够写入图片的多少�?
 
 	for(i = 0; i <height; i++)             // 循环按行写入
 	{
@@ -1255,16 +1254,16 @@ void 	LCD_DrawImage(uint16_t x,uint16_t y,uint16_t width,uint16_t height,const u
 			{
 				if(disChar & 0x01)
 				{
-					LCD_Buff[BuffCount] =  LCD.Color;			// 当前模值不为0时，使用画笔色绘点
+					LCD_Buff[BuffCount] =  LCD.Color;			// 当前模�?�不�?0时，使用画笔色绘�?
 				}
 				else
 				{
 					LCD_Buff[BuffCount] = LCD.BackColor;		//否则使用背景色绘制点
 				}
-				disChar >>= 1;     // 模值移位
+				disChar >>= 1;     // 模�?�移�?
 				Xaddress++;        // 水平坐标自加
-				BuffCount++;       // 缓冲区计数
-				if( (Xaddress - x)==width ) // 如果水平坐标达到了字符宽度，则退出当前循环,进入下一行的绘制
+				BuffCount++;       // 缓冲区计�?
+				if( (Xaddress - x)==width ) // 如果水平坐标达到了字符宽度，则�??出当前循�?,进入下一行的绘制
 				{
 					Xaddress = x;
 					break;
@@ -1272,16 +1271,16 @@ void 	LCD_DrawImage(uint16_t x,uint16_t y,uint16_t width,uint16_t height,const u
 			}
 			pImage++;
 		}
-		if( BuffCount == Buff_Height*width  )  // 达到缓冲区所能容纳的最大行数时
+		if( BuffCount == Buff_Height*width  )  // 达到缓冲区所能容纳的�?大行数时
 		{
 			BuffCount = 0; // 缓冲区计数清0
 
 			LCD_SetAddress( x, Yaddress , x+width-1, Yaddress+Buff_Height-1);	// 设置坐标
 			LCD_WriteBuff(LCD_Buff,width*Buff_Height);          // 写入显存
 
-			Yaddress = Yaddress+Buff_Height;    // 计算行偏移，开始写入下一部分数据
+			Yaddress = Yaddress+Buff_Height;    // 计算行偏移，�?始写入下�?部分数据
 		}
-		if( (i+1)== height ) // 到了最后一行时
+		if( (i+1)== height ) // 到了�?后一行时
 		{
 			LCD_SetAddress( x, Yaddress , x+width-1,i+y);	   // 设置坐标
 			LCD_WriteBuff(LCD_Buff,width*(i+1+y-Yaddress));    // 写入显存
@@ -1291,17 +1290,17 @@ void 	LCD_DrawImage(uint16_t x,uint16_t y,uint16_t width,uint16_t height,const u
 
 
 /***************************************************************************************************************************************
-*	函 数 名: LCD_CopyBuffer
+*	�? �? �?: LCD_CopyBuffer
 *
 *	入口参数: x - 起始水平坐标
 *				 y - 起始垂直坐标
-*			 	 width  - 目标区域的水平宽度
-*				 height - 目标区域的垂直宽度
-*				*pImage - 数据存储区的首地址
+*			 	 width  - 目标区域的水平宽�?
+*				 height - 目标区域的垂直宽�?
+*				*pImage - 数据存储区的首地�?
 *
 *	函数功能: 在指定坐标处，直接将数据复制到屏幕的显存
 *
-*	说    明: 批量复制函数，可用于移植 LVGL 或者将摄像头采集的图像显示出来
+*	�?    �?: 批量复制函数，可用于移植 LVGL 或�?�将摄像头采集的图像显示出来
 *
 *****************************************************************************************************************************************/
 
@@ -1312,16 +1311,16 @@ void	LCD_CopyBuffer(uint16_t x, uint16_t y,uint16_t width,uint16_t height,uint16
 
 	LCD_DC_Data;     // 数据指令选择 引脚输出高电平，代表本次传输 数据
 
-// 修改为16位数据宽度，写入数据更加效率，不需要拆分
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽度
+// 修改�?16位数据宽度，写入数据更加效率，不�?要拆�?
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_16BIT;   //	16位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 	LCD_SPI_TransmitBuffer(&LCD_SPI, DataBuff,width * height) ;
 
 //	HAL_SPI_Transmit(&hspi5, (uint8_t *)DataBuff, (x2-x1+1) * (y2-y1+1), 1000) ;
 
-// 改回8位数据宽度，因为指令和部分数据都是按照8位传输的
-	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽度
+// 改回8位数据宽度，因为指令和部分数据都是按�?8位传输的
+	LCD_SPI.Init.DataSize 	= SPI_DATASIZE_8BIT;    //	8位数据宽�?
 	HAL_SPI_Init(&LCD_SPI);
 
 }
@@ -1329,7 +1328,7 @@ void	LCD_CopyBuffer(uint16_t x, uint16_t y,uint16_t width,uint16_t height,uint16
 
 /**********************************************************************************************************************************
 *
-* 以下几个函数修改于HAL的库函数，目的是为了SPI传输数据不用计算偏移以及不限数据长度的写入
+* 以下几个函数修改于HAL的库函数，目的是为了SPI传输数据不用计算偏移以及不限数据长度的写�?
 *
 *****************************************************************************************************************FANKE************/
 
@@ -1423,7 +1422,7 @@ void MY_SPI_CloseTransfer(SPI_HandleTypeDef *hspi)
 
 /**
   * @brief  专为屏幕清屏而修改，将需要清屏的颜色批量传输
-  * @param  hspi   : spi的句柄
+  * @param  hspi   : spi的句�?
   * @param  pData  : 要写入的数据
   * @param  Size   : 数据大小
   * @retval HAL status
@@ -1432,7 +1431,7 @@ HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint
 {
 	uint32_t    tickstart;
 	uint32_t    Timeout = 1000;      // 超时判断
-	uint32_t    LCD_pData_32bit;     // 按32位传输时的数据
+	uint32_t    LCD_pData_32bit;     // �?32位传输时的数�?
 	uint32_t    LCD_TxDataCount;     // 传输计数
 	HAL_StatusTypeDef errorcode = HAL_OK;
 
@@ -1459,8 +1458,8 @@ HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint
 	hspi->TxXferSize  = Size;
 	hspi->TxXferCount = Size;
 
-	LCD_TxDataCount   = Size;                // 传输的数据长度
-	LCD_pData_32bit   = (pData<<16)|pData ;  // 按32位传输时，合并2个像素点的颜色
+	LCD_TxDataCount   = Size;                // 传输的数据长�?
+	LCD_pData_32bit   = (pData<<16)|pData ;  // �?32位传输时，合�?2个像素点的颜�?
 
 	/*Init field not used in handle to zero */
 	hspi->pRxBuffPtr  = NULL;
@@ -1473,7 +1472,7 @@ HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint
 
 	SPI_1LINE_TX(hspi);  // 单线SPI
 
-// 不使用硬件 TSIZE 控制，此处设置为0，即不限制传输的数据长度
+// 不使用硬�? TSIZE 控制，此处设置为0，即不限制传输的数据长度
 	MODIFY_REG(hspi->Instance->CR2, SPI_CR2_TSIZE, 0);
 
 	/* Enable SPI peripheral */
@@ -1535,7 +1534,7 @@ HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint
 	}
 	MY_SPI_CloseTransfer(hspi);   /* Call standard close procedure with error check */
 
-	SET_BIT((hspi)->Instance->IFCR , SPI_IFCR_SUSPC);  // 清除挂起标志位
+	SET_BIT((hspi)->Instance->IFCR , SPI_IFCR_SUSPC);  // 清除挂起标志�?
 
 	/* Process Unlocked */
 	__HAL_UNLOCK(hspi);
@@ -1550,7 +1549,7 @@ HAL_StatusTypeDef LCD_SPI_Transmit(SPI_HandleTypeDef *hspi, uint16_t pData, uint
 }
 /**
   * @brief
-  * @param  hspi   : spi的句柄
+  * @param  hspi   : spi的句�?
   * @param  pData  : 要写入的数据
   * @param  Size   : 数据大小
   * @retval HAL status
@@ -1582,7 +1581,7 @@ HAL_StatusTypeDef LCD_SPI_TransmitBuffer (SPI_HandleTypeDef *hspi, uint16_t *pDa
 	hspi->State       = HAL_SPI_STATE_BUSY_TX;
 	hspi->ErrorCode   = HAL_SPI_ERROR_NONE;
 
-	LCD_TxDataCount   = Size;                // 传输的数据长度
+	LCD_TxDataCount   = Size;                // 传输的数据长�?
 
 
 	/*Init field not used in handle to zero */
@@ -1593,7 +1592,7 @@ HAL_StatusTypeDef LCD_SPI_TransmitBuffer (SPI_HandleTypeDef *hspi, uint16_t *pDa
 
 	SPI_1LINE_TX(hspi);  // 单线SPI
 
-// 不使用硬件 TSIZE 控制，此处设置为0，即不限制传输的数据长度
+// 不使用硬�? TSIZE 控制，此处设置为0，即不限制传输的数据长度
 	MODIFY_REG(hspi->Instance->CR2, SPI_CR2_TSIZE, 0);
 
 	/* Enable SPI peripheral */
@@ -1659,7 +1658,7 @@ HAL_StatusTypeDef LCD_SPI_TransmitBuffer (SPI_HandleTypeDef *hspi, uint16_t *pDa
 	}
 	MY_SPI_CloseTransfer(hspi);   /* Call standard close procedure with error check */
 
-	SET_BIT((hspi)->Instance->IFCR , SPI_IFCR_SUSPC);  // 清除挂起标志位
+	SET_BIT((hspi)->Instance->IFCR , SPI_IFCR_SUSPC);  // 清除挂起标志�?
 
 	/* Process Unlocked */
 	__HAL_UNLOCK(hspi);
