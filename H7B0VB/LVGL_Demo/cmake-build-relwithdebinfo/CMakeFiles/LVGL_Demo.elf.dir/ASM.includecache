@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Core/Startup/startup_stm32h7b0vbtx.s
+
