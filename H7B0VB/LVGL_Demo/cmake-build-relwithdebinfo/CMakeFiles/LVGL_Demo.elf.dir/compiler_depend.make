@@ -17584,9 +17584,7 @@ CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj: G:/ST
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/stress/lv_demo_stress.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/lv_demos.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/widgets/lv_demo_widgets.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_list.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_main.h
+  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music.h
 
 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj: G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_list.c \
   D:/ST_CLT/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/_ansi.h \
@@ -17824,8 +17822,7 @@ CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj: 
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/lv_demos.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/widgets/lv_demo_widgets.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_list.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_main.h
+  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_list.h
 
 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj: G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_main.c \
   D:/ST_CLT/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/_ansi.h \
@@ -18062,11 +18059,7 @@ CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj: 
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/stress/lv_demo_stress.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/lv_demos.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/widgets/lv_demo_widgets.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_1.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_2.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_3.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music.h \
-  G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_list.h \
   G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_main.h
 
 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/stress/assets/lv_font_montserrat_12_compr_az.c.obj: G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/stress/assets/lv_font_montserrat_12_compr_az.c \
@@ -41685,9 +41678,9 @@ G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/
 
 D:/ST_CLT/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/alloca.h:
 
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/widgets/lv_checkbox.c:
-
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/layouts/flex/lv_flex.h:
+
+G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/widgets/lv_checkbox.c:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.h:
 
@@ -41790,8 +41783,6 @@ G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/widgets/span/lv_span.h:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/libs/sjpg/tjpgd.c:
-
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_1.h:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/widgets/spinbox/lv_spinbox.h:
 
@@ -41995,8 +41986,6 @@ G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demo
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/font/lv_font_montserrat_46.c:
 
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_3.h:
-
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Core/Src/system_stm32h7xx.c:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/lv_draw_label.c:
@@ -42145,14 +42134,6 @@ G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demo
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/lv_demo_music_main.h:
 
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/music/assets/spectrum_2.h:
-
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/widgets/keyboard/lv_keyboard.c:
-
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/misc/lv_area.c:
-
-G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c:
-
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/stress/assets/lv_font_montserrat_12_compr_az.c:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/demos/stress/assets/lv_font_montserrat_16_compr_az.c:
@@ -42220,6 +42201,12 @@ G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sdl/lv_draw_sdl_rect.c:
+
+G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/extra/widgets/keyboard/lv_keyboard.c:
+
+G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/misc/lv_area.c:
+
+G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c:
 
 G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Drivers/lvgl/src/draw/sw/lv_draw_sw_gradient.c:
 

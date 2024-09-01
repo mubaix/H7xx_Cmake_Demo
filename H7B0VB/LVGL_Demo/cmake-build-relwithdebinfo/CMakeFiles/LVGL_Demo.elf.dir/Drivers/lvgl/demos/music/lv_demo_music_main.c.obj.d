@@ -250,8 +250,4 @@ CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj: 
  G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\../stress/../lv_demos.h \
  G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\../keypad_encoder/lv_demo_keypad_encoder.h \
  G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\../keypad_encoder/../lv_demos.h \
- G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\../music/lv_demo_music.h \
- G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\lv_demo_music_list.h \
- G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\assets/spectrum_1.h \
- G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\assets/spectrum_2.h \
- G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\assets/spectrum_3.h
+ G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\demos\music\../music/lv_demo_music.h

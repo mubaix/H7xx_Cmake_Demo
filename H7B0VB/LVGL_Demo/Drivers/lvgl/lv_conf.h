@@ -712,7 +712,7 @@
 #define LV_USE_DEMO_STRESS                  0
 
 /* ÒôÀÖ²¥·ÅÆ÷µÄÑÝÊ¾ */
-#define LV_USE_DEMO_MUSIC                   1
+#define LV_USE_DEMO_MUSIC                   0
 #if LV_USE_DEMO_MUSIC
 # define LV_DEMO_MUSIC_SQUARE               0
 # define LV_DEMO_MUSIC_LANDSCAPE            0

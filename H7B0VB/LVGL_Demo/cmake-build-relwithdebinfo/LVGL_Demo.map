@@ -2150,16 +2150,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .data.img_lv_demo_music_btn_list_pause
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .rodata.img_lv_demo_music_btn_list_pause_map
-                0x00000000     0x28c8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .debug_line    0x00000000      0x3d4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
- .debug_str     0x00000000      0x75b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
+ .debug_line    0x00000000       0xa2 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
+ .debug_str     0x00000000      0x22f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_pause.c.obj
@@ -2178,16 +2174,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .data.img_lv_demo_music_btn_list_play
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .rodata.img_lv_demo_music_btn_list_play_map
-                0x00000000     0x28c8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .debug_line    0x00000000      0x3d3 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
- .debug_str     0x00000000      0x758 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
+ .debug_line    0x00000000       0xa1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
+ .debug_str     0x00000000      0x22e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_list_play.c.obj
@@ -2206,16 +2198,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .data.img_lv_demo_music_btn_loop
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .rodata.img_lv_demo_music_btn_loop_map
-                0x00000000      0x6c0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .debug_line    0x00000000      0x3ce CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
- .debug_str     0x00000000      0x749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
+ .debug_line    0x00000000       0x9c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
+ .debug_str     0x00000000      0x229 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_loop.c.obj
@@ -2234,16 +2222,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .data.img_lv_demo_music_btn_next
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .rodata.img_lv_demo_music_btn_next_map
-                0x00000000     0x2d0c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .debug_line    0x00000000      0x3ce CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
- .debug_str     0x00000000      0x749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
+ .debug_line    0x00000000       0x9c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
+ .debug_str     0x00000000      0x229 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_next.c.obj
@@ -2262,16 +2246,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .data.img_lv_demo_music_btn_pause
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .rodata.img_lv_demo_music_btn_pause_map
-                0x00000000     0x4749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .debug_line    0x00000000      0x3cf CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
- .debug_str     0x00000000      0x74c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
+ .debug_line    0x00000000       0x9d CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
+ .debug_str     0x00000000      0x22a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_pause.c.obj
@@ -2290,16 +2270,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .data.img_lv_demo_music_btn_play
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .rodata.img_lv_demo_music_btn_play_map
-                0x00000000     0x4749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .debug_line    0x00000000      0x3ce CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
- .debug_str     0x00000000      0x749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
+ .debug_line    0x00000000       0x9c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
+ .debug_str     0x00000000      0x229 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_play.c.obj
@@ -2318,16 +2294,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .data.img_lv_demo_music_btn_prev
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .rodata.img_lv_demo_music_btn_prev_map
-                0x00000000     0x2d0c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .debug_line    0x00000000      0x3ce CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
- .debug_str     0x00000000      0x749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
+ .debug_line    0x00000000       0x9c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
+ .debug_str     0x00000000      0x229 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_prev.c.obj
@@ -2346,16 +2318,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .data.img_lv_demo_music_btn_rnd
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .rodata.img_lv_demo_music_btn_rnd_map
-                0x00000000      0x6c0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .debug_line    0x00000000      0x3cd CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
- .debug_str     0x00000000      0x746 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
+ .debug_line    0x00000000       0x9b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
+ .debug_str     0x00000000      0x228 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_btn_rnd.c.obj
@@ -2374,16 +2342,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .data.img_lv_demo_music_corner_left
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .rodata.img_lv_demo_music_corner_left_map
-                0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .debug_line    0x00000000      0x3d1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
- .debug_str     0x00000000      0x752 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
+ .debug_line    0x00000000       0x9f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
+ .debug_str     0x00000000      0x22c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_left.c.obj
@@ -2402,16 +2366,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .data.img_lv_demo_music_corner_right
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .rodata.img_lv_demo_music_corner_right_map
-                0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .debug_line    0x00000000      0x3d2 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
- .debug_str     0x00000000      0x755 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
+ .debug_line    0x00000000       0xa0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
+ .debug_str     0x00000000      0x22d CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_corner_right.c.obj
@@ -2430,16 +2390,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .data.img_lv_demo_music_cover_1
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .rodata.img_lv_demo_music_cover_1_map
-                0x00000000     0xf0a0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .debug_line    0x00000000      0x3cd CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
- .debug_str     0x00000000      0x746 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
+ .debug_line    0x00000000       0x9b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
+ .debug_str     0x00000000      0x228 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_1.c.obj
@@ -2458,16 +2414,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .data.img_lv_demo_music_cover_2
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .rodata.img_lv_demo_music_cover_2_map
-                0x00000000     0xf0a0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .debug_line    0x00000000      0x3cd CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
- .debug_str     0x00000000      0x746 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
+ .debug_line    0x00000000       0x9b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
+ .debug_str     0x00000000      0x228 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_2.c.obj
@@ -2486,16 +2438,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .data.img_lv_demo_music_cover_3
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .rodata.img_lv_demo_music_cover_3_map
-                0x00000000     0xf0a0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .debug_line    0x00000000      0x3cd CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
- .debug_str     0x00000000      0x746 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
+ .debug_line    0x00000000       0x9b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
+ .debug_str     0x00000000      0x228 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_cover_3.c.obj
@@ -2514,16 +2462,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .data.img_lv_demo_music_icon_1
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .rodata.img_lv_demo_music_icon_1_map
-                0x00000000      0x480 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .debug_line    0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
- .debug_str     0x00000000      0x743 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
+ .debug_line    0x00000000       0x9a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
+ .debug_str     0x00000000      0x227 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_1.c.obj
@@ -2542,16 +2486,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .data.img_lv_demo_music_icon_2
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .rodata.img_lv_demo_music_icon_2_map
-                0x00000000      0x480 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .debug_line    0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
- .debug_str     0x00000000      0x743 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
+ .debug_line    0x00000000       0x9a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
+ .debug_str     0x00000000      0x227 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_2.c.obj
@@ -2570,16 +2510,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .data.img_lv_demo_music_icon_3
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .rodata.img_lv_demo_music_icon_3_map
-                0x00000000      0x480 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .debug_line    0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
- .debug_str     0x00000000      0x743 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
+ .debug_line    0x00000000       0x9a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
+ .debug_str     0x00000000      0x227 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_3.c.obj
@@ -2598,16 +2534,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .data.img_lv_demo_music_icon_4
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .rodata.img_lv_demo_music_icon_4_map
-                0x00000000      0x480 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .debug_line    0x00000000      0x3cc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
- .debug_str     0x00000000      0x743 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
+ .debug_line    0x00000000       0x9a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
+ .debug_str     0x00000000      0x227 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_icon_4.c.obj
@@ -2626,16 +2558,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .data.img_lv_demo_music_list_border
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .rodata.img_lv_demo_music_list_border_map
-                0x00000000      0xcc0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .debug_line    0x00000000      0x3d1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
- .debug_str     0x00000000      0x752 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
+ .debug_line    0x00000000       0x9f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
+ .debug_str     0x00000000      0x22c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_list_border.c.obj
@@ -2654,32 +2582,24 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .data.img_lv_demo_music_logo
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .rodata.img_lv_demo_music_logo_map
-                0x00000000     0x4982 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .debug_info    0x00000000      0x2fe CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .debug_abbrev  0x00000000       0xf0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .debug_line    0x00000000      0x3ca CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
- .debug_str     0x00000000      0x73d CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
+ .debug_line    0x00000000       0x98 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
+ .debug_str     0x00000000      0x225 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_logo.c.obj
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .data.img_lv_demo_music_slider_knob
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .rodata.img_lv_demo_music_slider_knob_map
-                0x00000000     0x1008 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .debug_line    0x00000000      0x3d1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
- .debug_str     0x00000000      0x752 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
+ .debug_line    0x00000000       0x9f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
+ .debug_str     0x00000000      0x22c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_slider_knob.c.obj
@@ -2698,16 +2618,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .data.img_lv_demo_music_wave_bottom
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .rodata.img_lv_demo_music_wave_bottom_map
-                0x00000000     0x5940 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .debug_line    0x00000000      0x3d1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
- .debug_str     0x00000000      0x752 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
+ .debug_line    0x00000000       0x9f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
+ .debug_str     0x00000000      0x22c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_bottom.c.obj
@@ -2726,16 +2642,12 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .data.img_lv_demo_music_wave_top
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .rodata.img_lv_demo_music_wave_top_map
-                0x00000000     0x5940 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .debug_info    0x00000000      0x2fb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .debug_abbrev  0x00000000       0xde CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .debug_line    0x00000000      0x3ce CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
- .debug_str     0x00000000      0x749 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
+ .debug_line    0x00000000       0x9c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
+ .debug_str     0x00000000      0x229 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/assets/img_lv_demo_music_wave_top.c.obj
@@ -2754,241 +2666,37 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text.lv_scr_act
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text.lv_demo_music
-                0x00000000       0x34 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text._lv_demo_music_get_title
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text._lv_demo_music_get_artist
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text._lv_demo_music_get_genre
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .text._lv_demo_music_get_track_length
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .rodata.time_list
-                0x00000000       0x38 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .rodata.str1.4
-                0x00000000      0x144 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .rodata.genre_list
-                0x00000000       0x38 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .rodata.artist_list
-                0x00000000       0x3c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .rodata.title_list
-                0x00000000       0x38 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .bss.list      0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .bss.ctrl      0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_info    0x00000000     0x1cab CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_abbrev  0x00000000      0x347 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_loclists
-                0x00000000       0xbc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .debug_aranges
-                0x00000000       0x48 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_rnglists
-                0x00000000       0x31 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_line    0x00000000      0x958 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_str     0x00000000     0x1d34 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
+                0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
+ .debug_line    0x00000000       0x88 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
+ .debug_str     0x00000000      0x215 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
- .debug_frame   0x00000000       0x80 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music.c.obj
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .rodata.add_list_btn.str1.4
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .text.add_list_btn
-                0x00000000      0x1b0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .text.btn_click_event_cb
-                0x00000000       0x10 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .text._lv_demo_music_list_btn_check
-                0x00000000       0x54 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .text._lv_demo_music_list_create
-                0x00000000      0x1ec CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .rodata.grid_rows.0
-                0x00000000        0x6 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .rodata.grid_cols.1
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_time
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_artist
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_title
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_btn_dis
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_btn_chk
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_btn_pr
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_btn
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.style_scrollbar
-                0x00000000        0x8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.font_medium
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.font_small
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .bss.list      0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_info    0x00000000     0x301e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_abbrev  0x00000000      0x453 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_loclists
-                0x00000000      0x270 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .debug_aranges
-                0x00000000       0x38 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_rnglists
-                0x00000000       0x27 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_line    0x00000000      0xd17 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_str     0x00000000     0x298a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
+                0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
+ .debug_line    0x00000000       0x8d CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
+ .debug_str     0x00000000      0x21a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
- .debug_frame   0x00000000       0x98 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_list.c.obj
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .data          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.lv_color_mix
-                0x00000000       0x30 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._img_set_zoom_anim_cb
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.start_anim_cb
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.spectrum_anim_cb
-                0x00000000       0x94 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.stop_start_anim
-                0x00000000       0x1c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.timer_cb.str1.4
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.timer_cb
-                0x00000000       0x48 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.lv_obj_set_style_pad_all
-                0x00000000       0x2c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_cont
-                0x00000000      0x12c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_wave_images
-                0x00000000       0xc4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_icon_box
-                0x00000000       0x78 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_title_box
-                0x00000000      0x100 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.create_ctrl_box.str1.4
-                0x00000000        0x5 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_ctrl_box
-                0x00000000      0x250 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.get_cos  0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.get_sin  0x00000000       0x16 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.spectrum_draw_event_cb
-                0x00000000      0x3b4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.album_img_create
-                0x00000000       0xb8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_spectrum_obj
-                0x00000000       0x4c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.create_handle.str1.4
-                0x00000000        0xb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.create_handle
-                0x00000000       0x98 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.lv_obj_move_foreground
-                0x00000000       0x16 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.lv_scr_act
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.track_load
-                0x00000000      0x1c4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._obj_set_x_anim_cb
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata._lv_demo_music_main_create.str1.4
-                0x00000000       0x17 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._lv_demo_music_main_create
-                0x00000000      0x2f8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._lv_demo_music_resume
-                0x00000000       0xb0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._lv_demo_music_play
-                0x00000000        0xc CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._lv_demo_music_album_next
-                0x00000000       0x38 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.next_click_event_cb
-                0x00000000       0x14 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.prev_click_event_cb
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.album_gesture_event_cb
-                0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.spectrum_end_cb
-                0x00000000        0xa CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text._lv_demo_music_pause
-                0x00000000       0x64 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .text.play_event_click_cb
-                0x00000000       0x1a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.bass_cnt.1
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .data.last_bass.2
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.grid_row.3
-                0x00000000        0x6 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.grid_col.4
-                0x00000000       0x10 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.grid_rows.5
-                0x00000000       0x1c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.grid_cols.6
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.rnd_array
-                0x00000000       0x3c CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum_len
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum  0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.play_obj  0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.start_anim_values
-                0x00000000       0x50 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.start_anim
-                0x00000000        0x1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.playing   0x00000000        0x1 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.track_id  0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.font_large
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.font_small
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.sec_counter_timer
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.time_act  0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.bar_rot   0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum_lane_ofs_start
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.bar_ofs   0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum_i_pause
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum_i
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.slider_obj
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.album_img_obj
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.time_obj  0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.genre_label
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.artist_label
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.title_label
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.spectrum_obj
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .bss.main_cont
-                0x00000000        0x4 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.spectrum_3
-                0x00000000     0x1ff8 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.spectrum_2
-                0x00000000     0x1860 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .rodata.spectrum_1
-                0x00000000      0xde0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_info    0x00000000     0x695f CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_abbrev  0x00000000      0x5bb CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_loclists
-                0x00000000     0x1628 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
+ .debug_info    0x00000000       0x7a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .debug_aranges
-                0x00000000      0x118 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_rnglists
-                0x00000000      0x100 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_line    0x00000000     0x211b CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_str     0x00000000     0x3a72 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
+                0x00000000       0x18 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
+ .debug_line    0x00000000       0x8d CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
+ .debug_str     0x00000000      0x21a CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .comment       0x00000000       0x44 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
- .debug_frame   0x00000000      0x380 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .ARM.attributes
                 0x00000000       0x2e CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/music/lv_demo_music_main.c.obj
  .text          0x00000000        0x0 CMakeFiles/LVGL_Demo.elf.dir/Drivers/lvgl/demos/stress/assets/lv_font_montserrat_12_compr_az.c.obj
