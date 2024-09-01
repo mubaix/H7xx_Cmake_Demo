@@ -122,6 +122,7 @@ int main(void)
 	lv_init();                                  /* lvgl系统初始化 */
 	lv_port_disp_init();                        /* lvgl显示接口初始化,放在lv_init()的后面 */
 	lv_demo_benchmark();
+//	lv_demo_music();
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -133,7 +134,7 @@ int main(void)
 //		LED1_OFF;
 //		HAL_Delay(700);
 		lv_task_handler();
-		HAL_Delay(3);
+//		HAL_Delay(3);
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
