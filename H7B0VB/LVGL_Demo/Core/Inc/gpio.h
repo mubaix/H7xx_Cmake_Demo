@@ -33,26 +33,15 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-#define LCD_Backlight_PIN                   GPIO_PIN_15                         // 鑳屽厜  寮曡剼
-#define LCD_Backlight_PORT                  GPIOD                               // 鑳屽厜 GPIO绔彛
-#define GPIO_LDC_Backlight_CLK_ENABLE       __HAL_RCC_GPIOD_CLK_ENABLE()    	// 鑳屽厜 GPIO鏃堕挓
-
-#define LCD_Backlight_OFF        			HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_RESET);    // 浣庣數骞筹紝鍏抽棴鑳屽厜
-#define LCD_Backlight_ON        			HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_SET);      // 楂樼數骞筹紝寮?鍚儗鍏?
-
-#define LCD_DC_PIN                        	GPIO_PIN_15                         // 鏁版嵁鎸囦护閫夋嫨  寮曡剼
-#define LCD_DC_PORT                        	GPIOE                               // 鏁版嵁鎸囦护閫夋嫨  GPIO绔彛
-#define GPIO_LDC_DC_CLK_ENABLE     			__HAL_RCC_GPIOE_CLK_ENABLE()    	// 鏁版嵁鎸囦护閫夋嫨  GPIO鏃堕挓
-
-#define LCD_DC_Command           			HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_RESET);       	// 浣庣數骞筹紝鎸囦护浼犺緭
-#define LCD_DC_Data              			HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_SET);        	// 楂樼數骞筹紝鏁版嵁浼犺緭
 
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+#define LED1_ON 	  	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET)		// 输出低电平，点亮LED1
+#define LED1_OFF 	  	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET)			// 输出高电平，关闭LED1
+#define LED1_Toggle		HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);							// 翻转IO口状态
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

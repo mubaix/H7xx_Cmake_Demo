@@ -55,24 +55,19 @@ include_directories(Core/Inc
         Drivers/CMSIS/Device/ST/STM32H7xx/Include
         Drivers/CMSIS/Include
         Drivers/lvgl
-        Drivers/lvgl/src
-        Drivers/lvgl/src/core
-        Drivers/lvgl/src/draw
-        Drivers/lvgl/src/font
-        Drivers/lvgl/src/misc
-        Drivers/lvgl/src/widgets
+        Drivers/lvgl/demos
         Drivers/lvgl/examples
-        Drivers/lvgl/examples/porting
-        Drivers/lvgl/demos/widgets
-        Drivers/lvgl/demos/widgets/assets
+        Drivers/lvgl/src
         Drivers/lvgl/demos/benchmark
         Drivers/lvgl/demos/benchmark/assets
-        Library/Inc
+        Drivers/lvgl/demos/widgets
+        Drivers/lvgl/demos/widgets/assets
+        Drivers/lvgl/examples/porting
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)
 
-file(GLOB_RECURSE SOURCES "Library/*.*" "Core/*.*" "Drivers/*.*")
+file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*")
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32H7B0VBTX_FLASH.ld)
 

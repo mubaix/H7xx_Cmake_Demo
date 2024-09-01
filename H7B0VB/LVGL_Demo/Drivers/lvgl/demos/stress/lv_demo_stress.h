@@ -19,8 +19,6 @@ extern "C" {
  *      DEFINES
  *********************/
 
-#define LV_DEMO_STRESS_TIME_STEP    50
-
 /**********************
  *      TYPEDEFS
  **********************/
@@ -29,11 +27,6 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 void lv_demo_stress(void);
-
-/**
- * Check if stress demo has finished one round.
- */
-bool lv_demo_stress_finished(void);
 
 /**********************
  *      MACROS

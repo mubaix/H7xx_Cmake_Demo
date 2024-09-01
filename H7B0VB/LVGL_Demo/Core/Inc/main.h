@@ -31,7 +31,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usart.h"
+#include "rtc.h"
+#include "gpio.h"
+#include "retarget.h"
+#include "spi.h"
+#include "lvgl.h"
+#include "lv_port_disp_template.h"
+#include "lv_demo_benchmark.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
