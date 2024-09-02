@@ -68,9 +68,7 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void LCD_Total_Init(void);
 
-void LCD_Test_Clear(void);
 /* USER CODE END 0 */
 
 /**
@@ -207,14 +205,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void LCD_Total_Init(void)
-{
-	SPI_LCD_Init();
-	LCD_SetDirection(Direction_V);
-	LCD_SetTextFont(&CH_Font24);			// 设置2424中文字体,ASCII字体对应为2412
-	LCD_SetColor(LCD_WHITE);				// 设置画笔颜色
-	LCD_Clear();
-}
+
 /* USER CODE END 4 */
 
 /* MPU Configuration */

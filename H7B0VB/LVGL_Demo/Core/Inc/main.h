@@ -37,7 +37,7 @@ extern "C" {
 #include "retarget.h"
 #include "spi.h"
 #include "lvgl.h"
-#include "lv_port_disp_template.h"
+#include "lv_port_disp.h"
 #include "lv_demo_benchmark.h"
 /* USER CODE END Includes */
 
