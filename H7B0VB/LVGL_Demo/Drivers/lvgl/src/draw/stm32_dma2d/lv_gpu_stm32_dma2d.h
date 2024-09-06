@@ -19,7 +19,7 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
-#include LV_GPU_DMA2D_CMSIS_INCLUDE
+#include "stm32h7xx.h"
 
 /*********************
  *      DEFINES

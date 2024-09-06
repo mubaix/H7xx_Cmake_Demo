@@ -113,9 +113,9 @@ int main(void)
 	MX_GPIO_Init();
 	MX_SPI4_Init();
 	MX_USART1_UART_Init();
-	MX_DMA2D_Init();
-	MX_TIM6_Init();
-	MX_RTC_Init();
+//	MX_DMA2D_Init();
+//	MX_TIM6_Init();
+//	MX_RTC_Init();
 	/* USER CODE BEGIN 2 */
 	lv_init();                                  /* lvgl系统初始化 */
 	lv_port_disp_init();                        /* lvgl显示接口初始化,放在lv_init()的后面 */
