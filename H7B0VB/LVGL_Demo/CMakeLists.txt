@@ -14,7 +14,7 @@ set(SIZE arm-none-eabi-size)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 # project settings
-project(LVGL_Demo C CXX ASM)
+project(SPI4_LCD_2.0 C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
@@ -49,20 +49,18 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc
+include_directories(
+        Core/Inc
         Drivers/STM32H7xx_HAL_Driver/Inc
         Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
         Drivers/CMSIS/Device/ST/STM32H7xx/Include
         Drivers/CMSIS/Include
         Drivers/lvgl
         Drivers/lvgl/demos
-        Drivers/lvgl/examples
-        Drivers/lvgl/src
         Drivers/lvgl/demos/benchmark
         Drivers/lvgl/demos/benchmark/assets
-        Drivers/lvgl/demos/widgets
-        Drivers/lvgl/demos/widgets/assets
         Drivers/lvgl/examples/porting
+        Drivers/lvgl/src
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)

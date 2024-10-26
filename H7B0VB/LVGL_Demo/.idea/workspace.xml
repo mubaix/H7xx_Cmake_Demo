@@ -11,7 +11,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="LVGL_Demo" targetName="LVGL_Demo.elf" />
+      <config projectName="SPI4_LCD_2.0" targetName="SPI4_LCD_2.0.elf" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -22,14 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b57f6ea-4f30-44e2-b5fe-78eee0ea7344" name="更改" comment="显示2/3屏，优化中">
-      <change beforePath="$PROJECT_DIR$/.cproject" beforeDir="false" afterPath="$PROJECT_DIR$/.cproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/lcd_fonts.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/lcd_fonts.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/spi.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/spi.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/spi.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/spi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +132,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CPPToolchains"
+    "settings.editor.selected.configurable": "CMakeSettings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -160,12 +154,12 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LVGL_Demo.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
+    <configuration name="SPI4_LCD_2.0.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SPI4_LCD_2.0" TARGET_NAME="SPI4_LCD_2.0.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SPI4_LCD_2.0" RUN_TARGET_NAME="SPI4_LCD_2.0.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="External_Flash-DAPLINK" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
+    <configuration name="External_Flash-DAPLINK" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SPI4_LCD_2.0" TARGET_NAME="SPI4_LCD_2.0.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="SPI4_LCD_2.0" RUN_TARGET_NAME="SPI4_LCD_2.0.elf">
       <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\FK7B0M1_External_Flash-DAPLINK.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
         <debugger kind="GDB" isBundled="true" />
       </openocd>
@@ -174,7 +168,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.LVGL_Demo.elf" />
+      <item itemvalue="CMake 应用程序.SPI4_LCD_2.0.elf" />
       <item itemvalue="OpenOCD 下载并运行.External_Flash-DAPLINK" />
     </list>
   </component>
@@ -212,6 +206,9 @@
       <workItem from="1725177686671" duration="450000" />
       <workItem from="1725180505810" duration="8000" />
       <workItem from="1726141836754" duration="374000" />
+      <workItem from="1729942079592" duration="246000" />
+      <workItem from="1729942336259" duration="359000" />
+      <workItem from="1729942708849" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="add h7b0_lvgl_demo_notrun">
       <option name="closed" value="true" />
