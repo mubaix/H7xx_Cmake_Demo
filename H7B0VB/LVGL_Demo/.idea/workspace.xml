@@ -17,26 +17,74 @@
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
-      <configuration PROFILE_NAME="Release" ENABLED="false" CONFIG_NAME="Release" />
       <configuration PROFILE_NAME="RelWithDebInfo" ENABLED="true" CONFIG_NAME="RelWithDebInfo" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffa5b855-f319-4cb7-964c-7c20caaf7308" name="更改" comment="更改adapter speed为10Mhz">
+    <list default="true" id="1b57f6ea-4f30-44e2-b5fe-78eee0ea7344" name="更改" comment="显示2/3屏，优化中">
+      <change beforePath="$PROJECT_DIR$/.cproject" beforeDir="false" afterPath="$PROJECT_DIR$/.cproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/stm32h7xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/stm32h7xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drivers/lvgl/lv_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/lvgl/lv_conf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drivers/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.h" beforeDir="false" afterPath="$PROJECT_DIR$/Drivers/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Inc/lcd_fonts.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/lcd_fonts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Inc/spi.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/spi.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Src/spi.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/spi.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
-    <option name="indexerUseModules" value="false" />
+  </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="columnWidths">
+      <list>
+        <option value="212" />
+        <option value="92" />
+        <option value="860" />
+      </list>
+    </option>
+    <option name="columnOrder">
+      <list>
+        <option value="名称" />
+        <option value="值" />
+        <option value="描述" />
+      </list>
+    </option>
+    <option name="loadedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../STM32H7B0.svd" />
+      </list>
+    </option>
+    <option name="nodes">
+      <map>
+        <entry key="STM32H7B0.svd" value="-E" />
+        <entry key="STM32H7B0.svd|g:SPI" value="-C" />
+        <entry key="STM32H7B0.svd|p:SPI4" value="-C" />
+        <entry key="STM32H7B0.svd|p:SPI4|CFG1" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|CFG2" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|CGFR" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|CR1" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|CR2" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|CRCPOLY" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|IER" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|IFCR" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|RXCRC" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|RXDR" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|SR" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|TXCRC" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|TXDR" value="HC" />
+        <entry key="STM32H7B0.svd|p:SPI4|UDRDR" value="HC" />
+      </map>
+    </option>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
@@ -54,10 +102,19 @@
     &quot;accountId&quot;: &quot;eb590ccc-5f33-459e-9516-8b742e79fc5f&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1.4" />
+    <option name="productBranch" value="Classic" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2lSo2csZKjkGVx3e0mU5CB1kvcv" />
+  <component name="ProjectId" id="2kUzNWUBykh2oFPHZsmqJGwLTh5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -65,35 +122,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;OpenOCD 下载并运行.External_Flash-DAPLINK..executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Core/Src&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "OpenOCD 下载并运行.External_Flash-DAPLINK.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "G:/STM32Cube/STM32CubeProject/H7xx_Cmake_Demo/H7B0VB/LVGL_Demo/Library/lvgl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CPPToolchains"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Core\Src" />
-      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl" />
+      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Library\lvgl" />
       <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers" />
+      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Core\Src" />
       <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Core\Inc" />
+      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Library\Src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers" />
+      <recent name="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\LVGL_Demo\Drivers\lvgl\examples\porting" />
     </key>
   </component>
-  <component name="RunManager" selected="OpenOCD 下载并运行.External_Flash-DAPLINK.">
-    <configuration name="LVGL_Demo.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="RelWithDebInfo" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
+  <component name="RunManager" selected="OpenOCD 下载并运行.External_Flash-DAPLINK">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LVGL_Demo.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="External_Flash-DAPLINK." type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="RelWithDebInfo" version="1" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
+    <configuration name="External_Flash-DAPLINK" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LVGL_Demo" TARGET_NAME="LVGL_Demo.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="LVGL_Demo" RUN_TARGET_NAME="LVGL_Demo.elf">
       <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="G:\STM32Cube\STM32CubeProject\H7xx_Cmake_Demo\H7B0VB\FK7B0M1_External_Flash-DAPLINK.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
         <debugger kind="GDB" isBundled="true" />
       </openocd>
@@ -103,75 +175,98 @@
     </configuration>
     <list>
       <item itemvalue="CMake 应用程序.LVGL_Demo.elf" />
-      <item itemvalue="OpenOCD 下载并运行.External_Flash-DAPLINK." />
+      <item itemvalue="OpenOCD 下载并运行.External_Flash-DAPLINK" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="ffa5b855-f319-4cb7-964c-7c20caaf7308" name="更改" comment="" />
-      <created>1725182632256</created>
+      <changelist id="1b57f6ea-4f30-44e2-b5fe-78eee0ea7344" name="更改" comment="" />
+      <created>1723352903530</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1725182632256</updated>
-      <workItem from="1725182633321" duration="5390000" />
-      <workItem from="1725188221686" duration="66000" />
-      <workItem from="1725188584790" duration="392000" />
-      <workItem from="1725189311954" duration="36000" />
-      <workItem from="1725189439691" duration="1455000" />
-      <workItem from="1725192310916" duration="6191000" />
-      <workItem from="1725280199555" duration="29000" />
-      <workItem from="1725280461797" duration="1852000" />
-      <workItem from="1725283369936" duration="2845000" />
-      <workItem from="1725361725496" duration="3463000" />
-      <workItem from="1725369931930" duration="580000" />
+      <updated>1723352903530</updated>
+      <workItem from="1723352904544" duration="7989000" />
+      <workItem from="1723361327848" duration="546000" />
+      <workItem from="1723361925086" duration="115000" />
+      <workItem from="1723367359589" duration="2366000" />
+      <workItem from="1723383793621" duration="172000" />
+      <workItem from="1723898001717" duration="14000" />
+      <workItem from="1723898291524" duration="2797000" />
+      <workItem from="1723901129675" duration="915000" />
+      <workItem from="1723947304153" duration="5000" />
+      <workItem from="1723947395276" duration="26000" />
+      <workItem from="1723947462069" duration="4488000" />
+      <workItem from="1723952844735" duration="628000" />
+      <workItem from="1723953592154" duration="561000" />
+      <workItem from="1723955806889" duration="7055000" />
+      <workItem from="1723968901563" duration="4000" />
+      <workItem from="1724487672642" duration="139000" />
+      <workItem from="1724561605007" duration="3000" />
+      <workItem from="1724584832503" duration="2225000" />
+      <workItem from="1724587085526" duration="725000" />
+      <workItem from="1724587975950" duration="458000" />
+      <workItem from="1724588482167" duration="2289000" />
+      <workItem from="1725171018568" duration="5366000" />
+      <workItem from="1725177642773" duration="36000" />
+      <workItem from="1725177686671" duration="450000" />
+      <workItem from="1725180505810" duration="8000" />
+      <workItem from="1726141836754" duration="374000" />
     </task>
-    <task id="LOCAL-00001" summary="finish porting lvgl 8.1.1">
+    <task id="LOCAL-00001" summary="add h7b0_lvgl_demo_notrun">
       <option name="closed" value="true" />
-      <created>1725187847486</created>
+      <created>1723360834685</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1725187847486</updated>
+      <updated>1723360834685</updated>
     </task>
-    <task id="LOCAL-00002" summary="del temp_file">
+    <task id="LOCAL-00002" summary="只显示一点点，优化中">
       <option name="closed" value="true" />
-      <created>1725199228177</created>
+      <created>1723951986903</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1725199228177</updated>
+      <updated>1723951986903</updated>
     </task>
-    <task id="LOCAL-00003" summary="update lvgl to 8.4">
+    <task id="LOCAL-00003" summary="显示2/3屏，优化中">
       <option name="closed" value="true" />
-      <created>1725281756770</created>
+      <created>1724589930659</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1725281756770</updated>
+      <updated>1724589930659</updated>
     </task>
-    <task id="LOCAL-00004" summary="更改adapter speed为10Mhz">
-      <option name="closed" value="true" />
-      <created>1725369972074</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1725369972074</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.map" />
   </component>
   <component name="VCPKGProject">
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="finish porting lvgl 8.1.1" />
-    <MESSAGE value="del temp_file" />
-    <MESSAGE value="update lvgl to 8.4" />
-    <MESSAGE value="更改adapter speed为10Mhz" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改adapter speed为10Mhz" />
+    <MESSAGE value="add h7b0_lvgl_demo_notrun" />
+    <MESSAGE value="只显示一点点，优化中" />
+    <MESSAGE value="显示2/3屏，优化中" />
+    <option name="LAST_COMMIT_MESSAGE" value="显示2/3屏，优化中" />
   </component>
 </project>

@@ -39,147 +39,147 @@ extern "C" {
 extern SPI_HandleTypeDef hspi4;
 
 /* USER CODE BEGIN Private defines */
-#define LCD_Width     240        // LCDµÄÏñËØ³¤¶È
-#define LCD_Height    320        // LCDµÄÏñËØ¿í¶È
-// ÏÔÊ¾·½Ïò²ÎÊı
-// Ê¹ÓÃÊ¾Àı£ºLCD_DisplayDirection(Direction_H) ÉèÖÃÆÁÄ»ºáÆÁÏÔÊ¾
-#define    Direction_H                0                    //LCDºáÆÁÏÔÊ¾
-#define    Direction_H_Flip       1                    //LCDºáÆÁÏÔÊ¾,ÉÏÏÂ·­×ª
-#define    Direction_V                2                    //LCDÊúÆÁÏÔÊ¾
-#define    Direction_V_Flip       3                    //LCDÊúÆÁÏÔÊ¾,ÉÏÏÂ·­×ª
+#define LCD_Width     240        // LCDçš„åƒç´ é•¿åº¦
+#define LCD_Height    320        // LCDçš„åƒç´ å®½åº¦
+// æ˜¾ç¤ºæ–¹å‘å‚æ•°
+// ä½¿ç”¨ç¤ºä¾‹ï¼šLCD_DisplayDirection(Direction_H) è®¾ç½®å±å¹•æ¨ªå±æ˜¾ç¤º
+#define    Direction_H                0                    //LCDæ¨ªå±æ˜¾ç¤º
+#define    Direction_H_Flip       1                    //LCDæ¨ªå±æ˜¾ç¤º,ä¸Šä¸‹ç¿»è½¬
+#define    Direction_V                2                    //LCDç«–å±æ˜¾ç¤º
+#define    Direction_V_Flip       3                    //LCDç«–å±æ˜¾ç¤º,ä¸Šä¸‹ç¿»è½¬
 
-// ÉèÖÃ±äÁ¿ÏÔÊ¾Ê±¶àÓàÎ»²¹0»¹ÊÇ²¹¿Õ¸ñ
-// Ö»ÓĞ LCD_DisplayNumber() ÏÔÊ¾ÕûÊı ºÍ LCD_DisplayDecimals()ÏÔÊ¾Ğ¡Êı ÕâÁ½¸öº¯ÊıÓÃµ½
-// Ê¹ÓÃÊ¾Àı£º LCD_ShowNumMode(Fill_Zero) ÉèÖÃ¶àÓàÎ»Ìî³ä0£¬ÀıÈç 123 ¿ÉÒÔÏÔÊ¾Îª 000123
-#define  Fill_Zero  0        //Ìî³ä0
-#define  Fill_Space 1        //Ìî³ä¿Õ¸ñ
+// è®¾ç½®å˜é‡æ˜¾ç¤ºæ—¶å¤šä½™ä½è¡¥0è¿˜æ˜¯è¡¥ç©ºæ ¼
+// åªæœ‰ LCD_DisplayNumber() æ˜¾ç¤ºæ•´æ•° å’Œ LCD_DisplayDecimals()æ˜¾ç¤ºå°æ•° è¿™ä¸¤ä¸ªå‡½æ•°ç”¨åˆ°
+// ä½¿ç”¨ç¤ºä¾‹ï¼š LCD_ShowNumMode(Fill_Zero) è®¾ç½®å¤šä½™ä½å¡«å……0ï¼Œä¾‹å¦‚ 123 å¯ä»¥æ˜¾ç¤ºä¸º 000123
+#define  Fill_Zero  0        //å¡«å……0
+#define  Fill_Space 1        //å¡«å……ç©ºæ ¼
 
 
-/*---------------------------------------- ³£ÓÃÑÕÉ« ------------------------------------------------------
+/*---------------------------------------- å¸¸ç”¨é¢œè‰² ------------------------------------------------------
 
- 1. ÕâÀïÎªÁË·½±ãÓÃ»§Ê¹ÓÃ£¬¶¨ÒåµÄÊÇ24Î» RGB888ÑÕÉ«£¬È»ºóÔÙÍ¨¹ı´úÂë×Ô¶¯×ª»»³É 16Î» RGB565 µÄÑÕÉ«
- 2. 24Î»µÄÑÕÉ«ÖĞ£¬´Ó¸ßÎ»µ½µÍÎ»·Ö±ğ¶ÔÓ¦ R¡¢G¡¢B  3¸öÑÕÉ«Í¨µÀ
- 3. ÓÃ»§¿ÉÒÔÔÚµçÄÔÓÃµ÷É«°å»ñÈ¡24Î»RGBÑÕÉ«£¬ÔÙ½«ÑÕÉ«ÊäÈëLCD_SetColor()»òLCD_SetBackColor()¾Í¿ÉÒÔÏÔÊ¾³öÏàÓ¦µÄÑÕÉ«
+ 1. è¿™é‡Œä¸ºäº†æ–¹ä¾¿ç”¨æˆ·ä½¿ç”¨ï¼Œå®šä¹‰çš„æ˜¯24ä½ RGB888é¢œè‰²ï¼Œç„¶åå†é€šè¿‡ä»£ç è‡ªåŠ¨è½¬æ¢æˆ 16ä½ RGB565 çš„é¢œè‰²
+ 2. 24ä½çš„é¢œè‰²ä¸­ï¼Œä»é«˜ä½åˆ°ä½ä½åˆ†åˆ«å¯¹åº” Rã€Gã€B  3ä¸ªé¢œè‰²é€šé“
+ 3. ç”¨æˆ·å¯ä»¥åœ¨ç”µè„‘ç”¨è°ƒè‰²æ¿è·å–24ä½RGBé¢œè‰²ï¼Œå†å°†é¢œè‰²è¾“å…¥LCD_SetColor()æˆ–LCD_SetBackColor()å°±å¯ä»¥æ˜¾ç¤ºå‡ºç›¸åº”çš„é¢œè‰²
  */
 
 
 
-/* ³£ÓÃ»­±ÊÑÕÉ« */
-#define WHITE           0xFFFF      /* °×É« */
-#define BLACK           0x0000      /* ºÚÉ« */
-#define RED             0xF800      /* ºìÉ« */
-#define GREEN           0x07E0      /* ÂÌÉ« */
-#define BLUE            0x001F      /* À¶É« */
-#define MAGENTA         0xF81F      /* Æ·ºìÉ«/×ÏºìÉ« = BLUE + RED */
-#define YELLOW          0xFFE0      /* »ÆÉ« = GREEN + RED */
-#define CYAN            0x07FF      /* ÇàÉ« = GREEN + BLUE */
+/* å¸¸ç”¨ç”»ç¬”é¢œè‰² */
+#define WHITE           0xFFFF      /* ç™½è‰² */
+#define BLACK           0x0000      /* é»‘è‰² */
+#define RED             0xF800      /* çº¢è‰² */
+#define GREEN           0x07E0      /* ç»¿è‰² */
+#define BLUE            0x001F      /* è“è‰² */
+#define MAGENTA         0xF81F      /* å“çº¢è‰²/ç´«çº¢è‰² = BLUE + RED */
+#define YELLOW          0xFFE0      /* é»„è‰² = GREEN + RED */
+#define CYAN            0x07FF      /* é’è‰² = GREEN + BLUE */
 
-/* ·Ç³£ÓÃÑÕÉ« */
-#define BROWN           0xBC40      /* ×ØÉ« */
-#define BRRED           0xFC07      /* ×ØºìÉ« */
-#define GRAY            0x8430      /* »ÒÉ« */
-#define DARKBLUE        0x01CF      /* ÉîÀ¶É« */
-#define LIGHTBLUE       0x7D7C      /* Ç³À¶É« */
-#define GRAYBLUE        0x5458      /* »ÒÀ¶É« */
-#define LIGHTGREEN      0x841F      /* Ç³ÂÌÉ« */
-#define LGRAY           0xC618      /* Ç³»ÒÉ«(PANNEL),´°Ìå±³¾°É« */
-#define LGRAYBLUE       0xA651      /* Ç³»ÒÀ¶É«(ÖĞ¼ä²ãÑÕÉ«) */
-#define LBBLUE          0x2B12      /* Ç³×ØÀ¶É«(Ñ¡ÔñÌõÄ¿µÄ·´É«) */
+/* éå¸¸ç”¨é¢œè‰² */
+#define BROWN           0xBC40      /* æ£•è‰² */
+#define BRRED           0xFC07      /* æ£•çº¢è‰² */
+#define GRAY            0x8430      /* ç°è‰² */
+#define DARKBLUE        0x01CF      /* æ·±è“è‰² */
+#define LIGHTBLUE       0x7D7C      /* æµ…è“è‰² */
+#define GRAYBLUE        0x5458      /* ç°è“è‰² */
+#define LIGHTGREEN      0x841F      /* æµ…ç»¿è‰² */
+#define LGRAY           0xC618      /* æµ…ç°è‰²(PANNEL),çª—ä½“èƒŒæ™¯è‰² */
+#define LGRAYBLUE       0xA651      /* æµ…ç°è“è‰²(ä¸­é—´å±‚é¢œè‰²) */
+#define LBBLUE          0x2B12      /* æµ…æ£•è“è‰²(é€‰æ‹©æ¡ç›®çš„åè‰²) */
 
 
-#define    LCD_WHITE       0xFFFFFF     // ´¿°×É«
-#define    LCD_BLACK       0x000000    // ´¿ºÚÉ«
+#define    LCD_WHITE       0xFFFFFF     // çº¯ç™½è‰²
+#define    LCD_BLACK       0x000000    // çº¯é»‘è‰²
 
-#define    LCD_BLUE        0x0000FF     //	´¿À¶É«
-#define    LCD_GREEN       0x00FF00    //	´¿ÂÌÉ«
-#define    LCD_RED         0xFF0000    //	´¿ºìÉ«
-#define    LCD_CYAN        0x00FFFF    //	À¶ÂÌÉ«
-#define    LCD_MAGENTA     0xFF00FF    //	×ÏºìÉ«
-#define    LCD_YELLOW      0xFFFF00    //	»ÆÉ«
-#define    LCD_GREY        0x2C2C2C    //	»ÒÉ«
+#define    LCD_BLUE        0x0000FF     //	çº¯è“è‰²
+#define    LCD_GREEN       0x00FF00    //	çº¯ç»¿è‰²
+#define    LCD_RED         0xFF0000    //	çº¯çº¢è‰²
+#define    LCD_CYAN        0x00FFFF    //	è“ç»¿è‰²
+#define    LCD_MAGENTA     0xFF00FF    //	ç´«çº¢è‰²
+#define    LCD_YELLOW      0xFFFF00    //	é»„è‰²
+#define    LCD_GREY        0x2C2C2C    //	ç°è‰²
 
-#define    LIGHT_BLUE      0x8080FF    //	ÁÁÀ¶É«
-#define    LIGHT_GREEN     0x80FF80    //	ÁÁÂÌÉ«
-#define    LIGHT_RED       0xFF8080    //	ÁÁºìÉ«
-#define    LIGHT_CYAN      0x80FFFF    //	ÁÁÀ¶ÂÌÉ«
-#define    LIGHT_MAGENTA   0xFF80FF    //	ÁÁ×ÏºìÉ«
-#define    LIGHT_YELLOW    0xFFFF80    //	ÁÁ»ÆÉ«
-#define    LIGHT_GREY      0xA3A3A3    //	ÁÁ»ÒÉ«
+#define    LIGHT_BLUE      0x8080FF    //	äº®è“è‰²
+#define    LIGHT_GREEN     0x80FF80    //	äº®ç»¿è‰²
+#define    LIGHT_RED       0xFF8080    //	äº®çº¢è‰²
+#define    LIGHT_CYAN      0x80FFFF    //	äº®è“ç»¿è‰²
+#define    LIGHT_MAGENTA   0xFF80FF    //	äº®ç´«çº¢è‰²
+#define    LIGHT_YELLOW    0xFFFF80    //	äº®é»„è‰²
+#define    LIGHT_GREY      0xA3A3A3    //	äº®ç°è‰²
 
-#define    DARK_BLUE       0x000080    //	°µÀ¶É«
-#define    DARK_GREEN      0x008000    //	°µÂÌÉ«
-#define    DARK_RED        0x800000    //	°µºìÉ«
-#define    DARK_CYAN       0x008080    //	°µÀ¶ÂÌÉ«
-#define    DARK_MAGENTA    0x800080    //	°µ×ÏºìÉ«
-#define    DARK_YELLOW     0x808000    //	°µ»ÆÉ«
-#define    DARK_GREY       0x404040    //	°µ»ÒÉ«
+#define    DARK_BLUE       0x000080    //	æš—è“è‰²
+#define    DARK_GREEN      0x008000    //	æš—ç»¿è‰²
+#define    DARK_RED        0x800000    //	æš—çº¢è‰²
+#define    DARK_CYAN       0x008080    //	æš—è“ç»¿è‰²
+#define    DARK_MAGENTA    0x800080    //	æš—ç´«çº¢è‰²
+#define    DARK_YELLOW     0x808000    //	æš—é»„è‰²
+#define    DARK_GREY       0x404040    //	æš—ç°è‰²
 
-/*--------------------------------------------- LCDÆäËüÒı½Å -----------------------------------------------*/
+/*--------------------------------------------- LCDå…¶å®ƒå¼•è„š -----------------------------------------------*/
 
-#define  LCD_Backlight_PIN                                GPIO_PIN_15                         // ±³¹â  Òı½Å
-#define    LCD_Backlight_PORT                            GPIOD                                    // ±³¹â GPIO¶Ë¿Ú
-#define    GPIO_LCD_Backlight_CLK_ENABLE            __HAL_RCC_GPIOD_CLK_ENABLE()    // ±³¹â GPIOÊ±ÖÓ
+#define  LCD_Backlight_PIN                                GPIO_PIN_15                         // èƒŒå…‰  å¼•è„š
+#define    LCD_Backlight_PORT                            GPIOD                                    // èƒŒå…‰ GPIOç«¯å£
+#define    GPIO_LCD_Backlight_CLK_ENABLE            __HAL_RCC_GPIOD_CLK_ENABLE()    // èƒŒå…‰ GPIOæ—¶é’Ÿ
 
-#define    LCD_Backlight_OFF        HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_RESET);    // µÍµçÆ½£¬¹Ø±Õ±³¹â
-#define    LCD_Backlight_ON        HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_SET);        // ¸ßµçÆ½£¬¿ªÆô±³¹â
+#define    LCD_Backlight_OFF        HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_RESET);    // ä½ç”µå¹³ï¼Œå…³é—­èƒŒå…‰
+#define    LCD_Backlight_ON        HAL_GPIO_WritePin(LCD_Backlight_PORT, LCD_Backlight_PIN, GPIO_PIN_SET);        // é«˜ç”µå¹³ï¼Œå¼€å¯èƒŒå…‰
 
-#define  LCD_DC_PIN                        GPIO_PIN_15                         // Êı¾İÖ¸ÁîÑ¡Ôñ  Òı½Å
-#define    LCD_DC_PORT                        GPIOE                                    // Êı¾İÖ¸ÁîÑ¡Ôñ  GPIO¶Ë¿Ú
-#define    GPIO_LCD_DC_CLK_ENABLE     __HAL_RCC_GPIOE_CLK_ENABLE()    // Êı¾İÖ¸ÁîÑ¡Ôñ  GPIOÊ±ÖÓ
+#define  LCD_DC_PIN                        GPIO_PIN_15                         // æ•°æ®æŒ‡ä»¤é€‰æ‹©  å¼•è„š
+#define    LCD_DC_PORT                        GPIOE                                    // æ•°æ®æŒ‡ä»¤é€‰æ‹©  GPIOç«¯å£
+#define    GPIO_LCD_DC_CLK_ENABLE     __HAL_RCC_GPIOE_CLK_ENABLE()    // æ•°æ®æŒ‡ä»¤é€‰æ‹©  GPIOæ—¶é’Ÿ
 
-#define    LCD_DC_Command           HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_RESET);       // µÍµçÆ½£¬Ö¸Áî´«Êä
-#define    LCD_DC_Data              HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_SET);        // ¸ßµçÆ½£¬Êı¾İ´«Êä
+#define    LCD_DC_Command           HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_RESET);       // ä½ç”µå¹³ï¼ŒæŒ‡ä»¤ä¼ è¾“
+#define    LCD_DC_Data              HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_SET);        // é«˜ç”µå¹³ï¼Œæ•°æ®ä¼ è¾“
 
 /* USER CODE END Private defines */
 
 void MX_SPI4_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-/*------------------------------------------------ º¯ÊıÉùÃ÷ ----------------------------------------------*/
+/*------------------------------------------------ å‡½æ•°å£°æ˜ ----------------------------------------------*/
 
-void SPI_LCD_Init(void);      // Òº¾§ÆÁÒÔ¼°SPI³õÊ¼»¯
-void LCD_Clear(void);             // ÇåÆÁº¯Êı
-void LCD_ClearRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);    // ¾Ö²¿ÇåÆÁº¯Êı
+void SPI_LCD_Init(void);      // æ¶²æ™¶å±ä»¥åŠSPIåˆå§‹åŒ–
+void LCD_Clear(void);             // æ¸…å±å‡½æ•°
+void LCD_ClearRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);    // å±€éƒ¨æ¸…å±å‡½æ•°
 
-void LCD_SetAddress(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);    // ÉèÖÃ×ø±ê
-void LCD_SetColor(uint32_t Color);                   //	ÉèÖÃ»­±ÊÑÕÉ«
-void LCD_SetBackColor(uint32_t Color);                //	ÉèÖÃ±³¾°ÑÕÉ«
-void LCD_SetDirection(uint8_t direction);          //	ÉèÖÃÏÔÊ¾·½Ïò
+void LCD_SetAddress(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);    // è®¾ç½®åæ ‡
+void LCD_SetColor(uint32_t Color);                   //	è®¾ç½®ç”»ç¬”é¢œè‰²
+void LCD_SetBackColor(uint32_t Color);                //	è®¾ç½®èƒŒæ™¯é¢œè‰²
+void LCD_SetDirection(uint8_t direction);          //	è®¾ç½®æ˜¾ç¤ºæ–¹å‘
 
-//>>>>>	ÏÔÊ¾ASCII×Ö·û
-void LCD_SetAsciiFont(pFONT *fonts);                                        //	ÉèÖÃASCII×ÖÌå
-void LCD_DisplayChar(uint16_t x, uint16_t y, uint8_t c);                //	ÏÔÊ¾µ¥¸öASCII×Ö·û
-void LCD_DisplayString(uint16_t x, uint16_t y, char *p);            //	ÏÔÊ¾ASCII×Ö·û´®
+//>>>>>	æ˜¾ç¤ºASCIIå­—ç¬¦
+void LCD_SetAsciiFont(pFONT *fonts);                                        //	è®¾ç½®ASCIIå­—ä½“
+void LCD_DisplayChar(uint16_t x, uint16_t y, uint8_t c);                //	æ˜¾ç¤ºå•ä¸ªASCIIå­—ç¬¦
+void LCD_DisplayString(uint16_t x, uint16_t y, char *p);            //	æ˜¾ç¤ºASCIIå­—ç¬¦ä¸²
 
-//>>>>>	ÏÔÊ¾ÖĞÎÄ×Ö·û£¬°üÀ¨ASCIIÂë
-void LCD_SetTextFont(pFONT *fonts);                                        // ÉèÖÃÎÄ±¾×ÖÌå£¬°üÀ¨ÖĞÎÄºÍASCII×ÖÌå
-void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText);        // ÏÔÊ¾µ¥¸öºº×Ö
-void LCD_DisplayText(uint16_t x, uint16_t y, char *pText);        // ÏÔÊ¾×Ö·û´®£¬°üÀ¨ÖĞÎÄºÍASCII×Ö·û
+//>>>>>	æ˜¾ç¤ºä¸­æ–‡å­—ç¬¦ï¼ŒåŒ…æ‹¬ASCIIç 
+void LCD_SetTextFont(pFONT *fonts);                                        // è®¾ç½®æ–‡æœ¬å­—ä½“ï¼ŒåŒ…æ‹¬ä¸­æ–‡å’ŒASCIIå­—ä½“
+void LCD_DisplayChinese(uint16_t x, uint16_t y, char *pText);        // æ˜¾ç¤ºå•ä¸ªæ±‰å­—
+void LCD_DisplayText(uint16_t x, uint16_t y, char *pText);        // æ˜¾ç¤ºå­—ç¬¦ä¸²ï¼ŒåŒ…æ‹¬ä¸­æ–‡å’ŒASCIIå­—ç¬¦
 
-//>>>>>	ÏÔÊ¾ÕûÊı»òĞ¡Êı
-void LCD_ShowNumMode(uint8_t mode);        // ÉèÖÃ±äÁ¿ÏÔÊ¾Ä£Ê½£¬¶àÓàÎ»Ìî³ä¿Õ¸ñ»¹ÊÇÌî³ä0
-void LCD_DisplayNumber(uint16_t x, uint16_t y, int32_t number, uint8_t len);                    // ÏÔÊ¾ÕûÊı
-void LCD_DisplayDecimals(uint16_t x, uint16_t y, double number, uint8_t len, uint8_t decs);    // ÏÔÊ¾Ğ¡Êı
+//>>>>>	æ˜¾ç¤ºæ•´æ•°æˆ–å°æ•°
+void LCD_ShowNumMode(uint8_t mode);        // è®¾ç½®å˜é‡æ˜¾ç¤ºæ¨¡å¼ï¼Œå¤šä½™ä½å¡«å……ç©ºæ ¼è¿˜æ˜¯å¡«å……0
+void LCD_DisplayNumber(uint16_t x, uint16_t y, int32_t number, uint8_t len);                    // æ˜¾ç¤ºæ•´æ•°
+void LCD_DisplayDecimals(uint16_t x, uint16_t y, double number, uint8_t len, uint8_t decs);    // æ˜¾ç¤ºå°æ•°
 
-//>>>>>	2DÍ¼ĞÎº¯Êı
-void LCD_DrawPoint(uint16_t x, uint16_t y, uint32_t color);    //»­µã
+//>>>>>	2Då›¾å½¢å‡½æ•°
+void LCD_DrawPoint(uint16_t x, uint16_t y, uint32_t color);    //ç”»ç‚¹
 
-void LCD_DrawLine_V(uint16_t x, uint16_t y, uint16_t height);          // »­´¹Ö±Ïß
-void LCD_DrawLine_H(uint16_t x, uint16_t y, uint16_t width);           // »­Ë®Æ½Ïß
-void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);    // Á½µãÖ®¼ä»­Ïß
+void LCD_DrawLine_V(uint16_t x, uint16_t y, uint16_t height);          // ç”»å‚ç›´çº¿
+void LCD_DrawLine_H(uint16_t x, uint16_t y, uint16_t width);           // ç”»æ°´å¹³çº¿
+void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);    // ä¸¤ç‚¹ä¹‹é—´ç”»çº¿
 
-void LCD_DrawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);            //»­¾ØĞÎ
-void LCD_DrawCircle(uint16_t x, uint16_t y, uint16_t r);                                    //»­Ô²
-void LCD_DrawEllipse(int x, int y, int r1, int r2);                                            //»­ÍÖÔ²
+void LCD_DrawRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);            //ç”»çŸ©å½¢
+void LCD_DrawCircle(uint16_t x, uint16_t y, uint16_t r);                                    //ç”»åœ†
+void LCD_DrawEllipse(int x, int y, int r1, int r2);                                            //ç”»æ¤­åœ†
 
-//>>>>>	ÇøÓòÌî³äº¯Êı
-void LCD_FillRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);            //Ìî³ä¾ØĞÎ
-void LCD_FillCircle(uint16_t x, uint16_t y, uint16_t r);                                    //Ìî³äÔ²
+//>>>>>	åŒºåŸŸå¡«å……å‡½æ•°
+void LCD_FillRect(uint16_t x, uint16_t y, uint16_t width, uint16_t height);            //å¡«å……çŸ©å½¢
+void LCD_FillCircle(uint16_t x, uint16_t y, uint16_t r);                                    //å¡«å……åœ†
 
-//>>>>>	»æÖÆµ¥É«Í¼Æ¬
+//>>>>>	ç»˜åˆ¶å•è‰²å›¾ç‰‡
 void LCD_DrawImage(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint8_t *pImage);
 
-//>>>>>	ÅúÁ¿¸´ÖÆº¯Êı£¬Ö±½Ó½«Êı¾İ¸´ÖÆµ½ÆÁÄ»µÄÏÔ´æ
+//>>>>>	æ‰¹é‡å¤åˆ¶å‡½æ•°ï¼Œç›´æ¥å°†æ•°æ®å¤åˆ¶åˆ°å±å¹•çš„æ˜¾å­˜
 void LCD_CopyBuffer(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t *DataBuff);
 
 void lvgl_lcd_color_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t *color);
