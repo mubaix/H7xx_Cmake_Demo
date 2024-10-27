@@ -49,7 +49,8 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc
+include_directories(
+        Core/Inc
         Drivers/STM32H7xx_HAL_Driver/Inc
         Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
         Drivers/CMSIS/Device/ST/STM32H7xx/Include
@@ -59,7 +60,7 @@ include_directories(Core/Inc
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32H7B0xx)
 
-file(GLOB_RECURSE SOURCES "Library/*.*" "Core/*.*" "Drivers/*.*")
+file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*" "Library/Src/*.*")
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32H7B0VBTX_FLASH.ld)
 
